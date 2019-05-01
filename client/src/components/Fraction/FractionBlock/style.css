@@ -5,6 +5,10 @@
 .shown{
     border: 1px black solid;
 }
+.selected {
+    background-color: blue;
+}
+
 .col-12 .col-4 .col-6 [class*="col-"]{
     margin: 0px;
     padding-right: 0px !important;

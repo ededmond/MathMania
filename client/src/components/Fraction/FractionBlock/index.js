@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import './style.css';
+
+import FractionContext from "../Fraction-context";
+
 class FractionBlock extends Component {
     state = {
         pieces: 1,
-        selected :true
+        selected :false
     }
-    recursion ({width,height,fraction,select},state) {
+    recursion = ({width,height,fraction,select},state) => {
         if (this.state.pieces > 1) {
             if (width > height) {
                 const cols = this.state.pieces == 2 ? "col-6" : "col-4"
@@ -74,12 +77,14 @@ class FractionBlock extends Component {
     }
 
     // Are we simply selecting the block? Or dividing it?
-    click(select) {
+    click = (select,props,addToSum) => {
         if (this.state.pieces === 1) {
             if (select) {
+                const fraction = this.state.selected ? -props.fraction : props.fraction;
                 this.setState({
                     selected : !this.state.selected
                 })
+                addToSum(fraction);
             } else {
                 const pieces =prompt("How many pieces would you like to divide?",1);
                 console.log(pieces);
@@ -91,13 +96,14 @@ class FractionBlock extends Component {
     }
 
   render(props) {
-      console.log(this.props);
     return (
-      <div className = {"card fraction-block" + (this.state.selected && " selected") +(this.state.pieces == 1 && " shown")}
+        <FractionContext.Consumer>
+      {({select,addToSum}) => <div className = {"card fraction-block " + (this.state.selected && " selected") +(this.state.pieces == 1 && " shown")}
         style = {{height:this.props.height || "500px", width: this.props.width || "500px"}}
-        onClick = {() => this.click(this.props.select)} >
+        onClick = {() => this.click(select,this.props,addToSum)} >
         {this.recursion(this.props,this.state)}
-      </div>
+      </div>}
+      </FractionContext.Consumer>
     );
   };
 }
