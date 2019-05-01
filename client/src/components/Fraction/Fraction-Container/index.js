@@ -25,7 +25,7 @@ class FractionContainer extends Component {
     return (
       <FractionContext.Provider value={{select:this.state.select, addToSum:this.addToSum}}>
         <FractionBlock 
-            height= {400}
+            height= {500}
             width = {500}
             fraction = {1}
             coordinates = {[0,0]}

@@ -8,11 +8,11 @@ class FractionBlock extends Component {
         pieces: 1,
         selected :false
     }
-    recursion = ({width,height,fraction},state) => {
+    recursion = ({width,height,fraction,coordinates},state) => {
+        console.log(coordinates);
         if (this.state.pieces > 1) {
             if (width > height) {
-                const cols = this.state.pieces == 2 ? "col-6" : "col-4"
-                console.log(this.state.pieces);
+                const cols = this.state.pieces == 2 ? "col-6" : "col-4";
                 return (
                     <div className="row row-align">
                         <div>
@@ -20,6 +20,7 @@ class FractionBlock extends Component {
                                 height= {height}
                                 width = {(width / this.state.pieces)}
                                 fraction = {fraction * this.state.pieces}
+                                coordinates = {[coordinates[0],coordinates[1]]}
                             />
                         </div>
                         <div>
@@ -27,6 +28,7 @@ class FractionBlock extends Component {
                                 height= {height}
                                 width = {(width / this.state.pieces)}
                                 fraction = {fraction * this.state.pieces}
+                                coordinates = {[coordinates[0]-((width/this.state.pieces)),coordinates[1]]}
                             />
                         </div>
                         {(state.pieces == 3) && <div >
@@ -34,6 +36,7 @@ class FractionBlock extends Component {
                                 height= {height}
                                 width = {(width / this.state.pieces)}
                                 fraction = {fraction * this.state.pieces}
+                                coordinates = {[coordinates[0]-2*(width/this.state.pieces),coordinates[1]]}
                             />
                         </div>}
                     </div>
@@ -46,6 +49,7 @@ class FractionBlock extends Component {
                                 height= {height / this.state.pieces}
                                 width = {width}
                                 fraction = {fraction * this.state.pieces}
+                                coordinates = {[coordinates[0],coordinates[1]]}
                             />
                         </div>
                         <div className = "row">
@@ -53,6 +57,7 @@ class FractionBlock extends Component {
                                 height= {height / this.state.pieces}
                                 width = {width}
                                 fraction = {fraction * this.state.pieces}
+                                coordinates = {[coordinates[0],coordinates[1]-(height/this.state.pieces)]}
                             />
                         </div>
                         {state.pieces == 3 && <div className = "row">
@@ -60,6 +65,7 @@ class FractionBlock extends Component {
                                 height= {height / this.state.pieces}
                                 width = {width}
                                 fraction = {fraction * this.state.pieces}
+                                coordinates = {[coordinates[0],coordinates[1]-2*(height/this.state.pieces)]}
                             />
                         </div>}
                     </div>
@@ -95,7 +101,12 @@ class FractionBlock extends Component {
     return (
         <FractionContext.Consumer>
       {({select,addToSum}) => <div className = {"card fraction-block " + (this.state.selected && " selected") +(this.state.pieces == 1 && " shown")}
-        style = {{height:this.props.height || "500px", width: this.props.width || "500px"}}
+        style = {{
+            height:this.props.height || "500px", 
+            width: this.props.width || "500px",
+            backgroundPositionX: this.props.coordinates[0] || 0,
+            backgroundPositionY: this.props.coordinates[1] || 0
+        }}
         onClick = {() => this.click(select,this.props,addToSum)} >
         {this.recursion(this.props,this.state)}
       </div>}
