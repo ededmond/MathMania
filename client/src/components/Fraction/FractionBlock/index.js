@@ -8,7 +8,7 @@ class FractionBlock extends Component {
         pieces: 1,
         selected :false
     }
-    recursion = ({width,height,fraction,select},state) => {
+    recursion = ({width,height,fraction},state) => {
         if (this.state.pieces > 1) {
             if (width > height) {
                 const cols = this.state.pieces == 2 ? "col-6" : "col-4"
@@ -20,7 +20,6 @@ class FractionBlock extends Component {
                                 height= {height}
                                 width = {(width / this.state.pieces)}
                                 fraction = {fraction * this.state.pieces}
-                                select = {select}
                             />
                         </div>
                         <div>
@@ -28,7 +27,6 @@ class FractionBlock extends Component {
                                 height= {height}
                                 width = {(width / this.state.pieces)}
                                 fraction = {fraction * this.state.pieces}
-                                select = {select}
                             />
                         </div>
                         {(state.pieces == 3) && <div >
@@ -36,7 +34,6 @@ class FractionBlock extends Component {
                                 height= {height}
                                 width = {(width / this.state.pieces)}
                                 fraction = {fraction * this.state.pieces}
-                                select = {select}
                             />
                         </div>}
                     </div>
@@ -49,7 +46,6 @@ class FractionBlock extends Component {
                                 height= {height / this.state.pieces}
                                 width = {width}
                                 fraction = {fraction * this.state.pieces}
-                                select = {select}
                             />
                         </div>
                         <div className = "row">
@@ -57,7 +53,6 @@ class FractionBlock extends Component {
                                 height= {height / this.state.pieces}
                                 width = {width}
                                 fraction = {fraction * this.state.pieces}
-                                select = {select}
                             />
                         </div>
                         {state.pieces == 3 && <div className = "row">
@@ -65,7 +60,6 @@ class FractionBlock extends Component {
                                 height= {height / this.state.pieces}
                                 width = {width}
                                 fraction = {fraction * this.state.pieces}
-                                select = {select}
                             />
                         </div>}
                     </div>
@@ -87,7 +81,9 @@ class FractionBlock extends Component {
                 addToSum(fraction);
             } else {
                 const pieces =prompt("How many pieces would you like to divide?",1);
-                console.log(pieces);
+                if (this.state.selected) {
+                    addToSum(-props.fraction);
+                }
                 this.setState({
                     pieces
                 })

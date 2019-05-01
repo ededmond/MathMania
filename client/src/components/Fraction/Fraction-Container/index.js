@@ -28,7 +28,7 @@ class FractionContainer extends Component {
             height= {400}
             width = {500}
             fraction = {1}
-            select = {this.state.select}
+            coordinates = {[0,0]}
         />
         <button onClick={this.reset}>Reset</button>
         <button onClick={this.select}>Select</button>

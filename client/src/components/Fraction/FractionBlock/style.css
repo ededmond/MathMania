@@ -1,6 +1,8 @@
 .fraction-block {
     margin: 0px;
     border:none;
+    /* background-image: url("/images/mountain.jpg"); */
+    background-size: 500px;
 }
 .shown{
     border: 1px black solid;
