@@ -1,0 +1,28 @@
+.fraction-block {
+    margin: 0px;
+    border:none;
+    background-image: url("/images/mountain.jpg");
+    background-size: 500px;
+}
+.shown{
+    border: 1px black solid;
+}
+.selected {
+    background-color: blue;
+}
+
+.col-12 .col-4 .col-6 [class*="col-"]{
+    margin: 0px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: 0px;
+    width: 100%;
+}
+.row-align {
+    margin-right: 0px;
+    margin-left:0px;
+}
+p {
+    text-align : center;
+    margin: auto;
+}

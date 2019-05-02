@@ -7,6 +7,8 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
+import FractionContainer from "../../components/Fraction/Fraction-Container";
+
 class Books extends Component {
   state = {
     books: [],
@@ -106,7 +108,8 @@ class Books extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              // <h3>No Results to Display</h3>
+              <FractionContainer />
             )}
           </Col>
         </Row>
