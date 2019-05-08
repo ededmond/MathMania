@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import Nav from "./components/Nav";
-import Books from './pages/Books';
-import Detail from "./pages/Detail";
+import Books from './pages/Game';
+import Detail from "./pages/ClassManagement";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
 
