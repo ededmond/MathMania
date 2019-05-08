@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import { Container, Row, Col } from '../../components/Grid';
-import { Card } from '../../components/Card';
-import { Input, FormBtn } from '../../components/Form';
+import { Container, Row, Col } from '../../components/AlperComponents/Grid';
+import { Card } from '../../components/AlperComponents/Card';
+import { Input, FormBtn } from '../../components/AlperComponents/Form';
 import AUTH from '../../utils/AUTH';
 
 class SignupForm extends Component {
