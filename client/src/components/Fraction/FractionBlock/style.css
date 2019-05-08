@@ -1,14 +1,18 @@
 .fraction-block {
     margin: 0px;
     border:none;
-    background-image: url("/images/mountain.jpg");
+    /* background-image: url("/images/mountain.jpg"); */
     background-size: 500px;
+    /* visibility : hidden; */
+    /* opacity:.45; */
 }
 .shown{
     border: 1px black solid;
+    /* opacity: .45; */
+    /* z-index : 99; */
 }
 .selected {
-    background-color: blue;
+    
 }
 
 .col-12 .col-4 .col-6 [class*="col-"]{

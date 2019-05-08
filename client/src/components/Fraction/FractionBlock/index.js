@@ -100,12 +100,13 @@ class FractionBlock extends Component {
   render(props) {
     return (
         <FractionContext.Consumer>
-      {({select,addToSum}) => <div className = {"card fraction-block " + (this.state.selected && " selected") +(this.state.pieces == 1 && " shown")}
+      {({select,addToSum,imageURL,dullURL}) => <div className = {"card fraction-block " + (this.state.selected && " selected") +(this.state.pieces == 1 && " shown")}
         style = {{
             height:this.props.height || "500px", 
             width: this.props.width || "500px",
             backgroundPositionX: this.props.coordinates[0] || 0,
-            backgroundPositionY: this.props.coordinates[1] || 0
+            backgroundPositionY: this.props.coordinates[1] || 0,
+            backgroundImage: this.state.selected ? imageURL : dullURL
         }}
         onClick = {() => this.click(select,this.props,addToSum)} >
         {this.recursion(this.props,this.state)}
