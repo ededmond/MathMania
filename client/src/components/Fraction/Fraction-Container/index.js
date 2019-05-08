@@ -5,12 +5,14 @@ import FractionContext from "../Fraction-context";
 class FractionContainer extends Component {
     state = {
       select : false,
-      sum: 0
+      sum: 0,
+      reset: false
     }
     reset = () => {
       this.setState({
         select: false,
-        sum: 0
+        sum: 0,
+        reset: !this.state.reset
       });
     }
     select = () => {
@@ -30,7 +32,9 @@ class FractionContainer extends Component {
         select:this.state.select, 
         addToSum:this.addToSum,
         imageURL :"url('/images/mountain.jpg')",
-        dullURL : "url('/images/mountain-fade.jpg')"}}>
+        dullURL : "url('/images/mountain-fade.jpg')",
+        reset: this.state.reset
+      }}>
         <FractionBlock 
             height= {500}
             width = {500}

@@ -1,14 +1,24 @@
-import React, {Component,useState} from 'react';
+import React, {Component,useState,useContext,useEffect} from 'react';
 import './style.css';
 
 import FractionContext from "../Fraction-context";
 
 const FractionBlock = props => {
+    const {select,addToSum,imageURL,dullURL,reset} = useContext(FractionContext);
     const [state,setState] = useState({
         pieces: 1,
         selected :false
     });
+
+    //whenever reset changes, reset the block
+    useEffect(()=>{
+        setState({
+            pieces: 1,
+            selected:false
+        })
+    },[reset])
     
+    //  This creates blocks within blocks depending on how many pieces it has been divided into
     const recursion = ({width,height,fraction,coordinates},state) => {
         console.log(coordinates);
         if (state.pieces > 1) {
@@ -100,21 +110,17 @@ const FractionBlock = props => {
         }
     }
 
-    return (
-        <FractionContext.Consumer>
-      {({select,addToSum,imageURL,dullURL}) => <div className = {"card fraction-block " + (state.selected && " selected") +(state.pieces == 1 && " shown")}
-        style = {{
-            height:props.height || "500px", 
-            width: props.width || "500px",
-            backgroundPositionX: props.coordinates[0] || 0,
-            backgroundPositionY: props.coordinates[1] || 0,
-            backgroundImage: state.selected ? imageURL : dullURL
-        }}
-        onClick = {() => click(select,props,addToSum)} >
-        {recursion(props,state)}
-      </div>}
-      </FractionContext.Consumer>
-    );
+    return <div className = {"card fraction-block " + (state.selected && " selected") +(state.pieces == 1 && " shown")}
+            style = {{
+                height:props.height || "500px", 
+                width: props.width || "500px",
+                backgroundPositionX: props.coordinates[0] || 0,
+                backgroundPositionY: props.coordinates[1] || 0,
+                backgroundImage: state.selected ? imageURL : dullURL
+            }}
+            onClick = {() => click(select,props,addToSum)} >
+            {recursion(props,state)}
+        </div>
 }
 
 export default FractionBlock;
