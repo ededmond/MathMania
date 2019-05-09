@@ -9,7 +9,7 @@ import { Input, TextArea, FormBtn } from "../../components/AlperComponents/Form"
 
 import FractionContainer from "../../components/Fraction/Fraction-Container";
 
-class Books extends Component {
+class Game extends Component {
   state = {
     books: [],
     title: "",
@@ -118,4 +118,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Game;
