@@ -7,6 +7,7 @@ import Books from './pages/Game';
 import Detail from "./pages/ClassManagement";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
+import QuestionGenerator from './components/QuestionGenerator';
 
 class App extends Component {
   
@@ -85,7 +86,8 @@ class App extends Component {
             <Route exact path="/books" component={() => <LoginForm user={this.login}/>} />
             <Route exact path="/signup" component={SignupForm} />
           </div>
-        )}
+				)}
+				<QuestionGenerator/>
 			</div>
 		)
 	}
