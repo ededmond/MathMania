@@ -41,6 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Add routes, both API and view
+// app.use(require('./routes/html/htmlRoutes'));
 app.use(routes);
 
 // Error handler
