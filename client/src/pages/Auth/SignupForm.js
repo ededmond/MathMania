@@ -15,7 +15,10 @@ class SignupForm extends Component {
       lastName: '',
 			username: '',
 			password: '',
-			confirmPassword: '',
+      confirmPassword: '',
+      email: '',
+      teacher: 'student',
+      teacherCode: '',
 			redirectTo: null
 		};
   }
@@ -33,7 +36,10 @@ class SignupForm extends Component {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      email:this.state.email,
+      teacher: this.state.teacher,
+      teacherCode: this.state.teacherCode
     }).then(response => {
       console.log(response);
       if (!response.data.errmsg) {
@@ -48,6 +54,7 @@ class SignupForm extends Component {
   }
   
 	render() {
+    console.log("got to signupform");
 		if (this.state.redirectTo) {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
     }
@@ -80,6 +87,13 @@ class SignupForm extends Component {
                   value={this.state.username}
                   onChange={this.handleChange}
                 />
+                <label htmlFor="email">Email: </label>
+                <Input
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="password">Password: </label>
                 <Input
                   type="password"
@@ -94,6 +108,27 @@ class SignupForm extends Component {
                   value={this.state.confirmPassword}
                   onChange={this.handleChange}
                 />
+                <label htmlFor="teacher">Are you a Teacher or a Student?: </label>
+                <div className="form-group">
+                  <select className="form-control" 
+                    type="select" 
+                    name="teacher"
+                    value={this.state.teacher}
+                    onChange={this.handleChange}
+                    > 
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                  </select>
+                </div>
+                {this.state.teacher==="student" && <div>
+                <label htmlFor="teacherCode">Teacher Code:</label>
+                <Input
+                  type="password"
+                  name="teacherCode"
+                  value={this.state.teacherCode}
+                  onChange={this.handleChange}
+                />
+                </div>}
                 <Link to="/">Login</Link>
                 <FormBtn onClick={this.handleSubmit}>Register</FormBtn>
               </form>

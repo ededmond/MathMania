@@ -3,17 +3,23 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import API from "../../utils/API";
-
+import AUTH from "../../utils/AUTH";
 class ClassManagement extends Component {
   state = {
-    book: {}
+    students: []
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  componentDidMount() {
-    API.getBook(this.props.match.params.id)
-      .then(res => this.setState({ book: res.data }))
-      .catch(err => console.log(err));
+  componentDidMount = () => {
+    AUTH.getStudents().then(response => {
+      console.log("students: ",response.data);
+      this.setState({
+        students: response.data
+      })
+      console.log(this.state);
+    }).catch(err => {
+      console.log(err);
+    })
   }
 
   render() {
@@ -22,20 +28,21 @@ class ClassManagement extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
+              <h2>Your Teacher Code: </h2>
               <h1>
-                {this.state.book.title} by {this.state.book.author}
+                {this.props.user._id}
               </h1>
+              <p>(Give this to your students when they sign up)</p>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
-              <p>
-                {this.state.book.synopsis}
-              </p>
-            </article>
+            {this.state.students.map(student => {
+              return(<article key={student._id}>
+                <h1>{student.firstName} {student.lastName}</h1>
+              </article>)
+            })}
           </Col>
         </Row>
         <Row>

@@ -5,6 +5,10 @@ export default {
   getUser: function() {
     return axios.get('/auth/user');
   },
+  //Gets students
+  getStudents: function() {
+    return axios.get('/auth/students');
+  },
   // Logs the user out
   logout: function() {
     return axios.post('/auth/logout');
