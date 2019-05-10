@@ -59,41 +59,45 @@ class Game extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-12">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              {/* <h1>Fractions are Fun!</h1> */}
             </Jumbotron>
+            </Col>
+            </Row>
+            <Row>
+              <Col size="md-6">
             <form>
-              <Input
+              {/* <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
                 placeholder="Title (required)"
-              />
+              /> */}
               <Input
-                value={this.state.author}
+                value={this.state.author} 
                 onChange={this.handleInputChange}
                 name="author"
-                placeholder="Author (required)"
+                placeholder="Question"
               />
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
-                placeholder="Synopsis (Optional)"
+                placeholder="multiple choice or enter anwser"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
+            {/* <Jumbotron>
+              <h1></h1>
+            </Jumbotron> */}
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
