@@ -30,3 +30,13 @@ p {
     text-align : center;
     margin: auto;
 }
+
+/* buttons */
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
