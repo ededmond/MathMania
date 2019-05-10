@@ -2,25 +2,26 @@ import React, {Component,useState,useContext,useEffect} from 'react';
 import './style.css';
 
 import FractionContext from "../Fraction-context";
-
+import PiecesButton from "../pieces-button";
 const FractionBlock = props => {
     const {select,addToSum,imageURL,dullURL,reset} = useContext(FractionContext);
     const [state,setState] = useState({
         pieces: 1,
-        selected :false
+        selected :false,
+        showChoice: false
     });
 
     //whenever reset changes, reset the block
     useEffect(()=>{
         setState({
             pieces: 1,
-            selected:false
+            selected:false,
+            showChoice: false
         })
     },[reset])
     
     //  This creates blocks within blocks depending on how many pieces it has been divided into
     const recursion = ({width,height,fraction,coordinates},state) => {
-        console.log(coordinates);
         if (state.pieces > 1) {
             if (width > height) {
                 const cols = state.pieces == 2 ? "col-6" : "col-4";
@@ -88,29 +89,48 @@ const FractionBlock = props => {
     }
 
     // Are we simply selecting the block? Or dividing it?
-    const click = (select,props,addToSum) => {
-        if (state.pieces === 1) {
+    const click = (select,props,addToSum,event) => {
+        if (event.target.className.includes("fraction-block") && state.pieces === 1) {
             if (select) {
                 const fraction = state.selected ? -props.fraction : props.fraction;
                 setState({
                     ...state,
-                    selected : !state.selected
+                    selected : !state.selected,
+                    showChoice: false
                 })
                 addToSum(fraction);
             } else {
-                const pieces =prompt("How many pieces would you like to divide?",1);
-                if (state.selected) {
-                    addToSum(-props.fraction);
-                }
                 setState({
                     ...state,
-                    pieces
+                    showChoice: true
                 })
             }
         }
     }
 
-    return <div className = {"card fraction-block " + (state.selected && " selected") +(state.pieces == 1 && " shown")}
+    const piecesReturn = event => {
+        if (state.selected) {
+            addToSum(-props.fraction);
+        }
+        const pieces = event.target.value;
+        if (state.pieces ===1) {
+            setState({
+                ...state,
+                selected: false,
+                showChoice: false,
+                pieces: pieces
+            })
+        } else {
+            setState({
+                ...state,
+                showChoice:false,
+                selected: false
+            })
+        }
+        
+    }
+
+    return (<div name ="fractionblock" className = {"card fraction-block " + (state.selected && " selected") +(state.pieces == 1 && " shown")}
             style = {{
                 height:props.height || "500px", 
                 width: props.width || "500px",
@@ -118,9 +138,13 @@ const FractionBlock = props => {
                 backgroundPositionY: props.coordinates[1] || 0,
                 backgroundImage: state.selected ? imageURL : dullURL
             }}
-            onClick = {() => click(select,props,addToSum)} >
+            onClick = {event => click(select,props,addToSum,event)} >
             {recursion(props,state)}
-        </div>
+            <div className = {state.pieces==1 && state.showChoice ? "show" : "hide"}>
+                <button className = "fraction-button" onClick={piecesReturn} value ={2} >2</button>
+                <button className = "fraction-button" onClick={piecesReturn} value={3}>3</button>
+            </div>
+        </div>)
 }
 
 export default FractionBlock;

@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import API from "../../utils/API";
 import AUTH from "../../utils/AUTH";
-class Detail extends Component {
+class ClassManagement extends Component {
   state = {
     students: []
   };
@@ -55,4 +55,4 @@ class Detail extends Component {
   }
 }
 
-export default Detail;
+export default ClassManagement;
