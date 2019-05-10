@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 mongoose.promise = Promise;
 
 // Define userSchema
@@ -10,7 +11,23 @@ const userSchema = new Schema({
   	username: { type: String, unique: false, required: false },
   	password: { type: String, unique: false, required: false },
 	email: { type: String, unique: false, required: false},
-	teacherCode: {type: String, unique: true}
+	// isTeacher: {type:Boolean, required:true},
+	teacherCode: {type: Schema.Types.ObjectId, ref: 'User'},
+	// students: [{type:Schema.Types.ObjectId,ref: 'User'}],
+	grades:{
+		beginner: {
+			correct: {type: String, default: 0},
+			total: {type: String, default: 0}
+		},
+		intermediate: {
+			correct: {type: String, default: 0},
+			total: {type: String, default: 0}
+		},
+		advanced:{
+			correct: {type: String, default: 0},
+			total: {type: String, default: 0}
+		}
+	}
 });
 
 // Define schema methods
@@ -29,6 +46,9 @@ userSchema.pre('save', function(next) {
 		console.log('No password provided!');
 		next();
 	} else {
+		// if (this.isTeacher) {
+		// 	this.teacherCode = crypto.randomBytes(10).toString('hex');
+		// }
 		this.password = this.hashPassword(this.password);
 		next();
 	}

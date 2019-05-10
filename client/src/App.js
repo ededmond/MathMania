@@ -4,7 +4,7 @@ import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import Nav from "./components/Nav";
 import Books from './pages/Game';
-import Detail from "./pages/ClassManagement";
+import ClassManagement from "./pages/ClassManagement";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
 
@@ -73,7 +73,8 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={() => <Books user={this.state.user}/>} />
                 <Route exact path="/books" component={() => <Books user={this.state.user}/>} />
-                <Route exact path="/books/:id" component={Detail} />
+								<Route exact path="/students" component={()=><ClassManagement user={this.state.user}/>} />
+                {/* <Route exact path="/books/:id" component={Detail} /> */}
                 <Route component={NoMatch} />
               </Switch>
             </div>
