@@ -24,16 +24,39 @@ const Nav = (props) => {
   
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <Col size="md-2">
-        <Link to="/" className="navbar-brand">MathMania</Link>
-      </Col>
-      <Col size="md-7"></Col>
-      <Col size="md-3">
+  
+      <Link className="navbar-brand" to="/">
+        MathMania
+      </Link>
+      <div>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link to="/"
+              className={window.location.pathname === "/" || window.location.pathname === "/"
+                  ? "nav-link active"
+                  : "nav-link"
+              }>
+              Class Progress
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to="/"
+              className={window.location.pathname === "/students" ? "nav-link active" : "nav-link"}>
+              Class Management
+            </Link>
+          </li>
+        </ul>
+      </div>
+  
+          
+      {/* <Col size="md-3">
         <div className="float-right">
         {greeting} - <Link to="#" className="logout" onClick={props.logout}>Logout</Link>
         </div>
-      </Col>
+      </Col> */}
     </nav>
+
   )
 };
 
