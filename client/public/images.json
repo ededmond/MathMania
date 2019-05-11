@@ -1,11 +1,18 @@
+
+
+
 {
-    "imageURL": "/images/mountain.jpg",
-    "dullURL": "/images/mountain-fade.jpg",
-    "resize": {
+    "image": {
+    "src":[
+        "/images/mountain.jpg",
+        "/images/mountain-fade.jpg"
+        ],
         "width": 100,
         "height": 100
     },
     "logoURL":"/images/logo.PNG"
 }
+    
+
 
 
