@@ -16,16 +16,16 @@ const userSchema = new Schema({
 	// students: [{type:Schema.Types.ObjectId,ref: 'User'}],
 	grades:{
 		beginner: {
-			correct: {type: String, default: 0},
-			total: {type: String, default: 0}
+			correct: {type: Number, default: 0},
+			total: {type: Number, default: 0}
 		},
 		intermediate: {
-			correct: {type: String, default: 0},
-			total: {type: String, default: 0}
+			correct: {type: Number, default: 0},
+			total: {type:Number, default: 0}
 		},
 		advanced:{
-			correct: {type: String, default: 0},
-			total: {type: String, default: 0}
+			correct: {type: Number, default: 0},
+			total: {type: Number, default: 0}
 		}
 	}
 });

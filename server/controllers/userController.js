@@ -22,6 +22,23 @@ module.exports = {
       })
     }
   },
+  grade:(req,res) => {
+    const difficulty = req.body.difficulty;
+    const correct = req.body.correct;
+    const grades = {};
+    grades[difficulty] = {
+      correct: correct ? req.user.grades[difficulty].correct + 1 : req.user.grades[difficulty].correct,
+      total : req.user.grades[difficulty].total + 1
+    }
+    db.User.findByIdAndUpdate(req.user._id,{
+      grades
+    }).then(response => {
+      res.json(response);
+    }).catch(error => {
+      console.log(error);
+      res.json(error);
+    })
+  },
   register: (req, res) => {
     const { firstName, lastName, username, password, email,teacherCode,teacher} = req.body;
     // ADD VALIDATION
