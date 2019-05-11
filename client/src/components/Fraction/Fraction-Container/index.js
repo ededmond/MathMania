@@ -28,7 +28,7 @@ class FractionContainer extends Component {
     }
   render() {
     return (
-      <FractionContext.Provider value={{
+      <FractionContext.Provider  value={{
         select:this.state.select, 
         addToSum:this.addToSum,
         imageURL :"url('/images/mountain.jpg')",
