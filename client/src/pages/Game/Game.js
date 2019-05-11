@@ -8,6 +8,7 @@ import { List, ListItem } from "../../components/AlperComponents/List";
 import { Input, TextArea, FormBtn } from "../../components/AlperComponents/Form";
 
 import FractionContainer from "../../components/Fraction/Fraction-Container";
+import QuestionGenerator from '../../components/QuestionGenerator';
 
 class Game extends Component {
   state = {
@@ -117,6 +118,7 @@ class Game extends Component {
             )}
           </Col>
         </Row>
+        <QuestionGenerator/>
       </Container>
     );
   }

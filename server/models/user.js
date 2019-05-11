@@ -11,21 +11,20 @@ const userSchema = new Schema({
   	username: { type: String, unique: false, required: false },
   	password: { type: String, unique: false, required: false },
 	email: { type: String, unique: false, required: false},
-	// isTeacher: {type:Boolean, required:true},
 	teacherCode: {type: Schema.Types.ObjectId, ref: 'User'},
-	// students: [{type:Schema.Types.ObjectId,ref: 'User'}],
+	difficulty: {type:String},
 	grades:{
 		beginner: {
-			correct: {type: String, default: 0},
-			total: {type: String, default: 0}
+			correct: {type: Number, default: 0},
+			total: {type: Number, default: 0}
 		},
 		intermediate: {
-			correct: {type: String, default: 0},
-			total: {type: String, default: 0}
+			correct: {type: Number, default: 0},
+			total: {type:Number, default: 0}
 		},
 		advanced:{
-			correct: {type: String, default: 0},
-			total: {type: String, default: 0}
+			correct: {type: Number, default: 0},
+			total: {type: Number, default: 0}
 		}
 	}
 });
