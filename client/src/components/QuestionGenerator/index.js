@@ -1,5 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './questionStyle.css';
+
+   
+const noDisplay = {
+    display: 'none'
+}
+const display = {
+    display: 'block'
+}
+
+
 
 class QuestionGenerator extends Component{
     state= {
@@ -7,10 +18,22 @@ class QuestionGenerator extends Component{
         question: '',
         choices: [],
         answer:'',
-        difficulty:''
+        difficulty:'',
+        selected: '',
+        result: '', 
     }
+ 
 
     handleQuestionPost = () => {
+        let ans =  document.getElementById(this.state.answer)
+        let sel= document.getElementById(this.state.selected)
+        if(ans && sel){
+            if(ans.classList[1]==='correct' || sel.classList[1]==='wrong'){  
+                ans.classList.remove('correct');
+                sel.classList.remove('wrong');
+            }
+        }
+      
      axios.post('/api/questions')
      .then(result =>{
         console.log(result.data)
@@ -24,30 +47,52 @@ class QuestionGenerator extends Component{
             question,
             choices,
             answer,
-            difficulty
+            difficulty, 
+            result: ''
         })
      })
      .catch(err => console.log(err))
+
+    }
+    handleStart = (e) => {
+       this.handleQuestionPost();
+        document.getElementById('question').setAttribute('style', display);
+        e.target.style.display = 'none'
     }
     handleConvert= (arr) => {
         let temp= arr.split('</mn><mn>').join('</sup>&frasl;<sub>');
         let temp2= temp.split('<mfrac><mn>').join('<mfrac><sup>');
         return temp2.split('</mn></mfrac>').join('</sub><mfrac>');
     }
-// <math><sup>1</sup>&frasl;<sub>10</sub></math>
+    handleSubmit = () => {
+        if(this.state.answer === this.state.selected){
+            this.setState({result:'CORRECT!'})
+            document.getElementById(this.state.answer).classList.add('correct')
+        }else{
+            this.setState({result:'Try again...'});
+            document.getElementById(this.state.answer).classList.add('correct')
+            document.getElementById(this.state.selected).classList.add('wrong');
+        }
+        axios.post('/auth/grades', {
+            difficulty: this.state.difficulty,
+            result: this.state.result
+        }).then(result => console.log('successfully posted'))
+        .catch(err => console.log(err));        
+    }
     render(){
-        let choices= this.state.choices.map((x,i) => <div className= "form-check" key={i}><input className= "form-check-input" type= 'radio' name= 'choicesRadio' value={i}/><label className= "form-check-label" htmlFor=  {'choicesRadio'+ i} dangerouslySetInnerHTML={{__html: this.handleConvert(x)}}></label></div>)
+        let choices= this.state.choices.map((x,i) => <div className= "form-check" id={i} key={i}><input className= "form-check-input" type= 'radio' name= 'choicesRadio' data= 'select' onClick= {() => this.setState({ selected: i })} /><label className= "form-check-label"  htmlFor=  {'choicesRadio'+ i} dangerouslySetInnerHTML={{__html: this.handleConvert(x)}}></label></div>)
         let question = `<math>${this.handleConvert(this.state.question)}</math>`;
-        console.log(question)
  
         return(
             <div>            
-                <button onClick= {this.handleQuestionPost}>Get a question</button>
-                <h1>{this.state.instructions}</h1>
-                <h3 dangerouslySetInnerHTML={{__html: question}}></h3>
-                {choices}
-                <button onClick= {console.log(this.state.answer)}>Submit</button>
-           
+                <button id ='start' style= {display} onClick= {this.handleStart}>Start</button>
+                <div id= 'question' style = {noDisplay}>
+                    <h1>{this.state.instructions}</h1>
+                    <h3 dangerouslySetInnerHTML={{__html: question}}></h3>
+                    {choices}
+                    <button onClick= {this.handleSubmit}>Submit</button> <button onClick= {this.handleQuestionPost}>Next</button>
+                    <h3>{this.state.result}</h3>
+                </div>
             </div>
         )
     }
