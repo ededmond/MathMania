@@ -40,9 +40,8 @@ class LoginForm extends Component {
           <Row>
             <Col size="md-3"></Col>
             <Col size="md-6">
-              <Card title="Welcome to Math Mania!">
+              <Card img height="40%" width="40%" src="/images/logo.PNG"/>
                 <form style={{marginTop: 10}}>
-								<img src="../"></img>
                   <label htmlFor="username">Username: </label>
                   <Input
                     type="text"

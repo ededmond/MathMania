@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { DropdownButton, Dropdown, Item } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Col } from '../AlperComponents/Grid';
 import './Nav.css';
@@ -24,10 +25,13 @@ const Nav = (props) => {
   
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-  
-      <Link className="navbar-brand" to="/">
-        MathMania
+  <Col size="md-9">
+      <Link  className="navbar-brand" to="/" >
+      <img height="40%" width="40%" src="/images/logo.PNG"/>
       </Link>
+ 
+
+  
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -48,13 +52,13 @@ const Nav = (props) => {
           </li>
         </ul>
       </div>
-  
+  </Col>
           
-      {/* <Col size="md-3">
-        <div className="float-right">
+      <Col size="md-3">
+        <div className="float-right" id="logout">
         {greeting} - <Link to="#" className="logout" onClick={props.logout}>Logout</Link>
         </div>
-      </Col> */}
+      </Col>
     </nav>
 
   )
