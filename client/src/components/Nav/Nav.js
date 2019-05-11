@@ -29,9 +29,7 @@ const Nav = (props) => {
       <Link  className="navbar-brand" to="/" >
       <img height="40%" width="40%" src="/images/logo.PNG"/>
       </Link>
- 
-
-  
+      
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">

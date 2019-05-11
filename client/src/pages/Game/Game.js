@@ -60,7 +60,7 @@ class Game extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
+            <Jumbotron style={{margin: 0}}>
               {/* <h1>Fractions are Fun!</h1> */}
             </Jumbotron>
             </Col>
@@ -74,12 +74,12 @@ class Game extends Component {
                 name="title"
                 placeholder="Title (required)"
               /> */}
-              <Input
+              {/* <Input
                 value={this.state.author} 
                 onChange={this.handleInputChange}
                 name="author"
                 placeholder="Question"
-              />
+              /> */}
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
