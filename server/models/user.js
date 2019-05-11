@@ -11,9 +11,8 @@ const userSchema = new Schema({
   	username: { type: String, unique: false, required: false },
   	password: { type: String, unique: false, required: false },
 	email: { type: String, unique: false, required: false},
-	// isTeacher: {type:Boolean, required:true},
 	teacherCode: {type: Schema.Types.ObjectId, ref: 'User'},
-	// students: [{type:Schema.Types.ObjectId,ref: 'User'}],
+	difficulty: {type:String},
 	grades:{
 		beginner: {
 			correct: {type: Number, default: 0},
