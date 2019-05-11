@@ -8,6 +8,7 @@ import ClassManagement from "./pages/ClassManagement";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
 
+
 class App extends Component {
   
   constructor() {
@@ -89,7 +90,8 @@ class App extends Component {
             <Route exact path="/game" component={() => <LoginForm user={this.login}/>} /> 
             <Route exact path="/signup" component={SignupForm} />
           </div>
-        )}
+				)}
+				
 			</div>
 		)
 	}
