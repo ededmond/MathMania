@@ -1,4 +1,11 @@
 {
     "imageURL": "/images/mountain.jpg",
-    "dullURL": "/images/mountain-fade.jpg"
+    "dullURL": "/images/mountain-fade.jpg",
+    "resize": {
+        "width": 100,
+        "height": 100
+    },
+    "logoURL":"/images/logo.PNG"
 }
+
+
