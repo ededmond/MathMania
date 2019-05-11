@@ -9,7 +9,6 @@ import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
 import Dashboard from './pages/Dashboard'; 
 
-
 class App extends Component {
   
   constructor() {
