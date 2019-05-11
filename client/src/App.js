@@ -74,10 +74,10 @@ class App extends Component {
                 <Route exact path="/" component={() => <Game user={this.state.user}/>} />
                 <Route exact path="/game" component={() => <Game user={this.state.user}/>} />
 								<Route exact path="/students" component={()=><ClassManagement user={this.state.user}/>} />
-                <Route exact path="/" component={() => <Game user={this.state.user}/>} />
+                {/* <Route exact path="/" component={() => <Game user={this.state.user}/>} />
                 <Route exact path="/game" component={() => <Game user={this.state.user}/>} />
                 <Route exact path="/game/:id" component={ClassManagement} />
-                 <Route exact path="/students" component={()=><ClassManagement user={this.state.user}/>} />
+                 <Route exact path="/students" component={()=><ClassManagement user={this.state.user}/>} /> */}
                 <Route component={NoMatch} />
               </Switch>
             </div>
