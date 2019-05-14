@@ -18,7 +18,11 @@ class Dashboard extends React.PureComponent {
         { studentName: "name", title: "Student Name" },
         { timeSpent: "time", title: "Hours Spent" },
         {
+<<<<<<< HEAD
           level: "grades",
+=======
+          level: "level",
+>>>>>>> update dashbaord for studnetn level instead of category
           title: "Student Level"
         },
         {
