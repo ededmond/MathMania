@@ -66,7 +66,7 @@ class Game extends Component {
             {/* </Jumbotron> */} */}
             </Col>
             </Row>
-            <Row> 
+            <Row id="content-div">   
               {/* <Col size="md-6"> */}
             {/* <form> */}
               {/* <Input

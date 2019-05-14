@@ -87,10 +87,13 @@ class QuestionGenerator extends Component{
             <div id="buttons">            
                 <button id ='start' class="btn" style= {display} onClick= {this.handleStart}>Let's Play!</button>
                 <div id= 'question' style = {noDisplay}>
-                    <h1>{this.state.instructions}</h1>
-                    <h3 dangerouslySetInnerHTML={{__html: question}}></h3>
+                    <h1 id="Evaluate">{this.state.instructions}</h1>
+                    <h4 dangerouslySetInnerHTML={{__html: question}}></h4>
                     {choices}
-                    <button onClick= {this.handleSubmit}>Submit</button> <button onClick= {this.handleQuestionPost}>Next</button>
+                    <div class="question-buttons">
+                        <button id="question-submit" class=" btn btn-info" onClick= {this.handleSubmit}>Submit</button> <button id="question-next" class=" btn btn-info" onClick= {this.handleQuestionPost}>Next</button>
+                    </div>
+                    
                     <h3>{this.state.result}</h3>
                 </div>
             </div>
