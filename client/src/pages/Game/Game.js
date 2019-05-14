@@ -59,11 +59,11 @@ class Game extends Component {
   render() {
     return (
       <Container fluid>
-        <Row>
+        <Row >
           <Col size="md-12">
-            <Jumbotron style={{margin: 0}}>
+            {/* <Jumbotron>
               {/* <h1>Fractions are Fun!</h1> */}
-            </Jumbotron>
+            {/* </Jumbotron> */} */}
             </Col>
             </Row>
             <Row> 

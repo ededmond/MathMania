@@ -1,5 +1,7 @@
 .FractionContainer{
     box-align: center;
+    /* background-color: rgba(275, 275, 275, .30);  
+    backdrop-filter: blur(5px); */
 }
 
 .btn-div{
@@ -10,3 +12,15 @@
 #reset-btn{
     margin-right: 10px;
 }
+
+h3 {
+    color: white;
+    font-size: 35px;
+
+}
+
+#fraction-div{
+    margin: 0 auto;
+    margin-top: 15px;
+}
+

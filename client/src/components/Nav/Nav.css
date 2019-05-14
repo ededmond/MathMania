@@ -2,11 +2,26 @@
   color: #fff;
 }
 
-.flex-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#nav {
+  height: 110px;
 }
+
+#logo{
+  margin-left: 0;
+}
+
+#progress{
+  float: left;
+}
+
+#mgmt{
+  float: left;
+}
+
+/* .navbar-brand{
+  width: 100px;
+} */
+
 
 
 

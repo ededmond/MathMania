@@ -28,6 +28,7 @@ class FractionContainer extends Component {
     }
   render() {
     return (
+      <div id ="fraction-div">
       <FractionContext.Provider  value={{
         select:this.state.select, 
         addToSum:this.addToSum,
@@ -48,6 +49,8 @@ class FractionContainer extends Component {
         </div>
 
       </FractionContext.Provider>
+      </div>
+
       
     );
   };
