@@ -2,4 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-image: url("https://backgroundcheckall.com/wp-content/uploads/2017/12/cartoon-background-art-3.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
+

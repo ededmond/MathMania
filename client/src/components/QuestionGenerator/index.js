@@ -84,8 +84,8 @@ class QuestionGenerator extends Component{
         let question = `<math>${this.handleConvert(this.state.question)}</math>`;
  
         return(
-            <div>            
-                <button id ='start' style= {display} onClick= {this.handleStart}>Start</button>
+            <div id="buttons">            
+                <button id ='start' class="btn" style= {display} onClick= {this.handleStart}>Let's Play!</button>
                 <div id= 'question' style = {noDisplay}>
                     <h1>{this.state.instructions}</h1>
                     <h3 dangerouslySetInnerHTML={{__html: question}}></h3>

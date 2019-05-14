@@ -6,3 +6,16 @@
     color: red;
     font-weight:bold;
 }
+
+#start{
+    background-color: #EB6864;
+    color: white;
+    height: 100px;
+    width: 200px;
+    font-size: 30px;
+}
+
+#buttons{
+    margin-top: 25%;
+    margin-left: 25%;
+}

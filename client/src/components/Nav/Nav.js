@@ -23,14 +23,59 @@ const Nav = (props) => {
   }
   
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-  <Col size="md-9">
-      <Link  className="navbar-brand" to="/" >
-      <img height="40%" width="40%" src="/images/logo.PNG"/>
-      </Link>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary" id= "nav">
+        <a class="navbar-brand" href="/">
+          <div id="logo"><img height="40%" width="40%" src="images/transparent-logo.png"/></div>
+        </a>
+
+        
+
+    
+
+        <ul class="nav navbar-nav ml-auto">
+
+        <li id= "progress"className="nav-item">
+            <Link to="/"
+              className={window.location.pathname === "/" || window.location.pathname === "/"
+                  ? "nav-link active"
+                  : "nav-link"
+              }>
+              Class Progress
+            </Link>
+          </li>
+
+          <li id= "mgmt" className="nav-item">
+            <Link to="/"
+              className={window.location.pathname === "/students" ? "nav-link active" : "nav-link"}>
+              Class Management
+            </Link>
+          </li>
+
+          <li>
+          <div className="float-" id="logout">
+            {greeting} - <Link to="#" className="logout" onClick={props.logout}>Logout</Link>
+          </div>
+
+          </li>
+
+        
+        
+        </ul>
+
+
+
+
+
+  {/* <Col size="md-9"> */}
+      {/* <Link  className="navbar-brand" to="/" >
       
-      <div>
+      </Link> */}
+      
+      {/* <div>
         <ul className="navbar-nav">
+        <li className="nav-item">
+        <img height="40%" width="40%" src="/images/logo.PNG"/>
+        </li>
           <li className="nav-item">
             <Link to="/"
               className={window.location.pathname === "/" || window.location.pathname === "/"
@@ -47,15 +92,11 @@ const Nav = (props) => {
               Class Management
             </Link>
           </li>
-        </ul>
-      </div>
-  </Col>
+        </ul> */}
+      {/* </div> */}
+  {/* </Col> */}
           
-      <Col size="md-3">
-        <div className="float-right" id="logout">
-        {greeting} - <Link to="#" className="logout" onClick={props.logout}>Logout</Link>
-        </div>
-      </Col>
+
     </nav>
 
   )
