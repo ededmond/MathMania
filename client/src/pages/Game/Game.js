@@ -66,9 +66,9 @@ class Game extends Component {
             </Jumbotron>
             </Col>
             </Row>
-            <Row>
-              <Col size="md-6">
-            <form>
+            <Row> 
+              {/* <Col size="md-6"> */}
+            {/* <form> */}
               {/* <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -81,7 +81,7 @@ class Game extends Component {
                 name="author"
                 placeholder="Question"
               /> */}
-              <TextArea
+              {/* <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
@@ -93,13 +93,13 @@ class Game extends Component {
               >
                 Submit
               </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+            </form> */}
+          {/* </Col> */}
+          <Col size="md-6" >
             {/* <Jumbotron>
               <h1></h1>
             </Jumbotron> */}
-            {this.state.books.length ? (
+            {/* {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
@@ -111,14 +111,19 @@ class Game extends Component {
                     <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                   </ListItem>
                 ))}
-              </List>
-            ) : (
-              // <h3>No Results to Display</h3>
+              </List> */}
+            {/* ) : (
+              // <h3>No Results to Display</h3> */}
               <FractionContainer />
-            )}
+            {/* )} */}
           </Col>
+
+          <Col size="md-6">
+          <QuestionGenerator/>
+          </Col>
+           
         </Row>
-        <QuestionGenerator/>
+       
       </Container>
     );
   }

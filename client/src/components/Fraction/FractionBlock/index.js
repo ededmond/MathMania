@@ -141,8 +141,8 @@ const FractionBlock = props => {
             onClick = {event => click(select,props,addToSum,event)} >
             {recursion(props,state)}
             <div className = {state.pieces==1 && state.showChoice ? "show" : "hide"}>
-                <button className = "fraction-button" onClick={piecesReturn} value ={2} >2</button>
-                <button className = "fraction-button" onClick={piecesReturn} value={3}>3</button>
+                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value ={2} >2</button>
+                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value={3}>3</button>
             </div>
         </div>)
 }

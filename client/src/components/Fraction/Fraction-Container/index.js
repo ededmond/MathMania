@@ -41,9 +41,12 @@ class FractionContainer extends Component {
             fraction = {1}
             coordinates = {[0,0]}
         />
-        <button onClick={this.reset}>Reset</button>
-        <button onClick={this.select}>Select</button>
+        <div class="btn-div">
+        <button id="reset-btn" class=" btn btn-secondary" onClick={this.reset}>Reset</button>
+        <button id="select-btn" class=" btn btn-info" onClick={this.select}>Select</button>
         <h3>{this.state.sum}</h3>
+        </div>
+
       </FractionContext.Provider>
       
     );
