@@ -10,7 +10,7 @@ import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 
-class ClassProgress extends React.PureComponent {
+class Dashboard extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,7 +64,9 @@ class ClassProgress extends React.PureComponent {
       <Container fluid>
         <Row>
           <Col size="md-12">
+            <Jumbotron>
               <h1>Student Data</h1>
+            </Jumbotron>
           </Col>
         </Row>
         <Row>
@@ -81,4 +83,4 @@ class ClassProgress extends React.PureComponent {
   }
 }
 
-export default ClassProgress;
+export default Dashboard;
