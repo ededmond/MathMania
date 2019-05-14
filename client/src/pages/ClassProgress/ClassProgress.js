@@ -68,9 +68,7 @@ class ClassProgress extends React.PureComponent {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
               <h1>Student Data</h1>
-            </Jumbotron>
           </Col>
         </Row>
         <Row>
