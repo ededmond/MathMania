@@ -10,7 +10,7 @@ import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 
-class Dashboard extends React.PureComponent {
+class ClassProgress extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,4 +83,4 @@ class Dashboard extends React.PureComponent {
   }
 }
 
-export default Dashboard;
+export default ClassProgress;
