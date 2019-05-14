@@ -45,9 +45,10 @@ userSchema.pre('save', function(next) {
 		console.log('No password provided!');
 		next();
 	} else {
-		// if (this.isTeacher) {
-		// 	this.teacherCode = crypto.randomBytes(10).toString('hex');
-		// }
+		//if this is a student
+		if (this.teacherCode) {
+			this.difficulty = "beginner";
+		}
 		this.password = this.hashPassword(this.password);
 		next();
 	}
