@@ -18,8 +18,8 @@ class Dashboard extends React.PureComponent {
         { studentName: "name", title: "Student Name" },
         { timeSpent: "time", title: "Hours Spent" },
         {
-          questionCategory: "questionCategory",
-          title: "Question Category"
+          level: "grades",
+          title: "Student Level"
         },
         {
           numberQuestionsAnswered: "numQuestAns",
