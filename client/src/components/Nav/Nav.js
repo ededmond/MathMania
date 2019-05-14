@@ -25,12 +25,15 @@ const Nav = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <Col size="md-9">
-      <Link  className="navbar-brand" to="/" >
-      <img height="40%" width="40%" src="/images/logo.PNG"/>
-      </Link>
+      {/* <Link  className="navbar-brand" to="/" >
+      
+      </Link> */}
       
       <div>
         <ul className="navbar-nav">
+        <li className="nav-item">
+        <img height="40%" width="40%" src="/images/logo.PNG"/>
+        </li>
           <li className="nav-item">
             <Link to="/"
               className={window.location.pathname === "/" || window.location.pathname === "/"
