@@ -35,6 +35,9 @@ class Dashboard extends React.PureComponent {
         }
       ],
       rows: [
+        {
+          
+        }
 
       ]
     };
