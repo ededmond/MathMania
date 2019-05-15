@@ -66,7 +66,7 @@ class Game extends Component {
             {/* </Jumbotron> */} */}
             </Col>
             </Row>
-            <Row> 
+            <Row id="content-div">   
               {/* <Col size="md-6"> */}
             {/* <form> */}
               {/* <Input
@@ -119,7 +119,7 @@ class Game extends Component {
           </Col>
 
           <Col size="md-6">
-          <QuestionGenerator/>
+          <QuestionGenerator user= {this.props.user}/>
           </Col>
            
         </Row>
