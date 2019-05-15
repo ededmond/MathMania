@@ -84,7 +84,7 @@ class App extends Component {
                   component={() => <Game user={this.state.user} />}
                 />
                 <Route exact path="/students" component={() => <ClassManagement user={this.state.user} />} />
-                {/* <Route
+                 <Route
                   exact
                   path="/dashboard"
                   component={() => <ClassProgress user={this.state.user} />}
