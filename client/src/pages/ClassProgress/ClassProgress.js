@@ -10,35 +10,54 @@ import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 
-class Dashboard extends React.PureComponent {
+class ClassProgress extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       columns: [
-        { studentName: "name", title: "Student Name" },
-        { timeSpent: "time", title: "Hours Spent" },
+        { name: "firstName", title: "Student Name",
+        getCellValue:(row,columnName) => {
+        return (
+          row.firstName + " " + row.lastName
+        ); 
+      } 
+    },
         {
-          questionCategory: "questionCategory",
-          title: "Question Category"
+          name: "grades",
+          title: "Beginner Score",
+          getCellValue: (row,columnName) => {
+            return (
+              row.grades.beginner.correct +
+              "/" +
+              row.grades.beginner.total
+            );
+          }
         },
         {
-          numberQuestionsAnswered: "numQuestAns",
-          title: "Questions Answered"
+          name: "grades",
+          title: "Intermediate Score", 
+          getCellValue: (row,columnName) => {
+            return (
+              row.grades.intermediate.correct + 
+              "/" + 
+              row.grades.intermediate.total
+            );
+          }
         },
         {
-          numberQuestionsCorrect: "numCorrect",
-          title: "Answered Correct"
-        },
-        {
-          numberQuestionsWrong: "numWrong",
-          title: "Answered Incorrect"
+          name: "grades",
+          title: "Advanced Score", 
+          getCellValue: (row, columnName) => {
+            return (
+              row.grades.advanced.correct + 
+              "/" + 
+              row.grades.advanced.total
+            );
+          }
         }
       ],
       rows: [
-        {
-          
-        }
-
+        
       ]
     };
   }
@@ -64,9 +83,7 @@ class Dashboard extends React.PureComponent {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
               <h1>Student Data</h1>
-            </Jumbotron>
           </Col>
         </Row>
         <Row>
@@ -83,4 +100,4 @@ class Dashboard extends React.PureComponent {
   }
 }
 
-export default Dashboard;
+export default ClassProgress;

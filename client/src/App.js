@@ -7,7 +7,8 @@ import Game from './pages/Game';
 import ClassManagement from "./pages/ClassManagement";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
-//import Dashboard from './pages/Dashboard'; 
+import ClassProgress from './pages/ClassProgress'; 
+
 
 class App extends Component {
   
@@ -86,8 +87,9 @@ class App extends Component {
                 {/* <Route
                   exact
                   path="/dashboard"
-                  component={() => <Dashboard user={this.state.user} />}
-                /> */}
+                  component={() => <ClassProgress user={this.state.user} />}
+                />
+
                 <Route component={NoMatch} />
               </Switch>
             </div>
