@@ -27,7 +27,7 @@ module.exports = {
     const correct = req.body.result === "CORRECT!";
     console.log(req.body);
     console.log(req.user.grades[difficulty]);
-    const grades = {};
+    const grades = req.user.grades;
     grades[difficulty] = {
       correct: correct ? req.user.grades[difficulty].correct + 1 : req.user.grades[difficulty].correct,
       total : req.user.grades[difficulty].total + 1
