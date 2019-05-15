@@ -40,7 +40,6 @@ module.exports = {
     })
   },
   changeLevel : (req,res) => {
-    console.log(req.params.id,req.body);
     db.User.findOneAndUpdate({
       teacherCode : req.user._id,
       _id: req.params.id},{difficulty:req.body.difficulty})
