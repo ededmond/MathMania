@@ -12,7 +12,7 @@ const userSchema = new Schema({
   	password: { type: String, unique: false, required: false },
 	email: { type: String, unique: false, required: false},
 	teacherCode: {type: Schema.Types.ObjectId, ref: 'User'},
-	difficulty: {type:String},
+	difficulty: {type:String, default: "beginner"},
 	grades:{
 		beginner: {
 			correct: {type: Number, default: 0},
@@ -45,10 +45,9 @@ userSchema.pre('save', function(next) {
 		console.log('No password provided!');
 		next();
 	} else {
-		//if this is a student
-		if (this.teacherCode) {
-			this.difficulty = "beginner";
-		}
+		// if (this.isTeacher) {
+		// 	this.teacherCode = crypto.randomBytes(10).toString('hex');
+		// }
 		this.password = this.hashPassword(this.password);
 		next();
 	}
