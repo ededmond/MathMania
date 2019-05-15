@@ -19,6 +19,8 @@ const FractionBlock = props => {
             showChoice: false
         })
     },[reset])
+
+    
     
     //  This creates blocks within blocks depending on how many pieces it has been divided into
     const recursion = ({width,height,fraction,coordinates},state) => {
@@ -148,7 +150,8 @@ const FractionBlock = props => {
 
     // Are we simply selecting the block? Or dividing it?
     const click = (select,props,addToSum,event) => {
-        if (event.target.className.includes("fraction-block") && state.pieces === 1) {
+        //only runs if not clicking button 
+        if (event.target.name !=="fraction-button" && state.pieces === 1) {
             if (select) {
                 const fraction = state.selected ? -props.fraction : props.fraction;
                 setState({
@@ -167,6 +170,7 @@ const FractionBlock = props => {
     }
 
     const piecesReturn = event => {
+        console.log(event.target.name);
         if (state.selected) {
             addToSum(-props.fraction);
         }
@@ -199,12 +203,12 @@ const FractionBlock = props => {
             onClick = {event => click(select,props,addToSum,event)} >
             {recursion2(props,state)}
             <div className = {state.pieces==1 && state.showChoice ? "show" : "hide"}>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value ={2} >2</button>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value={3}>3</button>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value ={5} >5</button>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value={7}>7</button>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value ={11} >11</button>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value={13}>13</button>
+                <button name = "fraction-button" className = "fraction-button btn btn-success" onClick={piecesReturn} value ={2} >2</button>
+                <button name = "fraction-button" className = "fraction-button btn btn-success" onClick={piecesReturn} value={3}>3</button>
+                <button name = "fraction-button" className = "fraction-button btn btn-success" onClick={piecesReturn} value ={5} >5</button>
+                <button name = "fraction-button" className = "fraction-button btn btn-success" onClick={piecesReturn} value={7}>7</button>
+                <button name = "fraction-button" className = "fraction-button btn btn-success" onClick={piecesReturn} value ={11} >11</button>
+                <button name = "fraction-button" className = "fraction-button btn btn-success" onClick={piecesReturn} value={13}>13</button>
             </div>
         </div>)
 }

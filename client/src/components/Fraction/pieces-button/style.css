@@ -1,5 +1,10 @@
 .show {
     display: block;
+    /* position:relative;
+    bottom: -0%; */
+    overflow:visible;
+    z-index: 5;
+    width: 500px;
 }
 
 .hide {
