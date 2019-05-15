@@ -1,96 +1,74 @@
-import React, {Component,useState,useContext,useEffect} from 'react';
+import React, {useState,useContext,useEffect} from 'react';
 import './style.css';
 
 import FractionContext from "../Fraction-context";
 import PiecesButton from "../pieces-button";
 const FractionBlock = props => {
-    const {select,addToSum,imageURL,dullURL,reset} = useContext(FractionContext);
+    const {select,addToSum,multiply,imageURL,dullURL,reset} = useContext(FractionContext);
     const [state,setState] = useState({
         pieces: 1,
         selected :false,
         showChoice: false
     });
 
-    //whenever reset changes, reset the block
+    //  whenever reset changes, reset the block
     useEffect(()=>{
         setState({
+            ...state,
             pieces: 1,
             selected:false,
             showChoice: false
         })
     },[reset])
-    
+
     //  This creates blocks within blocks depending on how many pieces it has been divided into
-    const recursion = ({width,height,fraction,coordinates},state) => {
+    const recursion2 = ({width,height,fraction,coordinates},state) => {
         if (state.pieces > 1) {
+            //  columns can only divide in certain circumstances
+            const fractionArray = Array.apply(null, Array(parseInt(state.pieces))).map(function () {});
+
             if (width > height) {
-                const cols = state.pieces == 2 ? "col-6" : "col-4";
+                // const cols = state.pieces == 2 ? "col-6" : "col-4";
                 return (
                     <div className="row row-align">
-                        <div>
+                    {fractionArray.map((item,index,fractionArray) => {
+                        return (<div>
                             <FractionBlock 
                                 height= {height}
                                 width = {(width / state.pieces)}
                                 fraction = {fraction * state.pieces}
-                                coordinates = {[coordinates[0],coordinates[1]]}
+                                coordinates = {[coordinates[0]-index*(width/state.pieces),coordinates[1]]}
                             />
-                        </div>
-                        <div>
-                            <FractionBlock 
-                                height= {height}
-                                width = {(width / state.pieces)}
-                                fraction = {fraction * state.pieces}
-                                coordinates = {[coordinates[0]-((width/state.pieces)),coordinates[1]]}
-                            />
-                        </div>
-                        {(state.pieces == 3) && <div >
-                            <FractionBlock 
-                                height= {height}
-                                width = {(width / state.pieces)}
-                                fraction = {fraction * state.pieces}
-                                coordinates = {[coordinates[0]-2*(width/state.pieces),coordinates[1]]}
-                            />
-                        </div>}
+                        </div>)
+                    })}
                     </div>
                 )
             } else {
+                //dividing the rows
                 return (
                     <div className="col-12">
-                        <div className = "row">
-                            <FractionBlock 
+                        {fractionArray.map((item,index,fractionArray) => {
+                            return (<div className="row" key ={index}>
+                                <FractionBlock 
                                 height= {height / state.pieces}
                                 width = {width}
                                 fraction = {fraction * state.pieces}
-                                coordinates = {[coordinates[0],coordinates[1]]}
-                            />
-                        </div>
-                        <div className = "row">
-                            <FractionBlock 
-                                height= {height / state.pieces}
-                                width = {width}
-                                fraction = {fraction * state.pieces}
-                                coordinates = {[coordinates[0],coordinates[1]-(height/state.pieces)]}
-                            />
-                        </div>
-                        {state.pieces == 3 && <div className = "row">
-                            <FractionBlock 
-                                height= {height / state.pieces}
-                                width = {width}
-                                fraction = {fraction * state.pieces}
-                                coordinates = {[coordinates[0],coordinates[1]-2*(height/state.pieces)]}
-                            />
-                        </div>}
+                                coordinates = {[coordinates[0],coordinates[1]-index*(height/state.pieces)]}
+                                />
+                            </div>)
+                        })}
                     </div>
                 )
             }
         } else {
-            return <p>1/{fraction}</p>
+            return <p>{multiply}/{fraction}</p>
         }
     }
 
     // Are we simply selecting the block? Or dividing it?
     const click = (select,props,addToSum,event) => {
-        if (event.target.className.includes("fraction-block") && state.pieces === 1) {
+        //only runs if not clicking button 
+        if (event.target.name !=="fraction-button" && state.pieces === 1) {
             if (select) {
                 const fraction = state.selected ? -props.fraction : props.fraction;
                 setState({
@@ -109,6 +87,7 @@ const FractionBlock = props => {
     }
 
     const piecesReturn = event => {
+        console.log(event.target.name);
         if (state.selected) {
             addToSum(-props.fraction);
         }
@@ -139,11 +118,9 @@ const FractionBlock = props => {
                 backgroundImage: state.selected ? imageURL : dullURL
             }}
             onClick = {event => click(select,props,addToSum,event)} >
-            {recursion(props,state)}
-            <div className = {state.pieces==1 && state.showChoice ? "show" : "hide"}>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value ={2} >2</button>
-                <button className = "fraction-button btn btn-success" onClick={piecesReturn} value={3}>3</button>
-            </div>
+            {props.children}
+            {recursion2(props,state)}
+            <PiecesButton show = {state.pieces==1 && state.showChoice} piecesReturn = {piecesReturn} />
         </div>)
 }
 

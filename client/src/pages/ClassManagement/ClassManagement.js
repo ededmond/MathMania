@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
-import API from "../../utils/API";
 import AUTH from "../../utils/AUTH";
 import $ from "jquery";
 import "./class.css";
