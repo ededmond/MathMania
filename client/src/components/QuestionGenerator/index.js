@@ -85,7 +85,7 @@ class QuestionGenerator extends Component{
  
         return(
             <div id="buttons">            
-                <button id ='start' class="btn" style= {display} onClick= {this.handleStart}>Let's Play!</button>
+                <button id ='start' class="btn animated bounce infinite" style= {display} onClick= {this.handleStart}>Let's Play!</button>
                 <div id= 'question' style = {noDisplay}>
                     <h1 id="Evaluate">{this.state.instructions}</h1>
                     <h4 dangerouslySetInnerHTML={{__html: question}}></h4>

@@ -6,7 +6,12 @@
 
 .btn-div{
     margin-top: 10px;
-    padding-left: 30%;
+    padding-top: 7%;
+    background-color: rgba(275, 275, 275, .65);  
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    width: 500px;
+    padding-left: 5%;
 }
 
 #reset-btn{
@@ -14,8 +19,10 @@
 }
 
 h3 {
-    color: white;
+    color: navy;
     font-size: 35px;
+    padding-left: 40%;
+    
 
 }
 
