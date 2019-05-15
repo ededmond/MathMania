@@ -6,7 +6,8 @@ class FractionContainer extends Component {
     state = {
       select : false,
       sum: 0,
-      reset: false
+      reset: false,
+      clone: false
     }
     reset = () => {
       this.setState({
@@ -26,7 +27,14 @@ class FractionContainer extends Component {
         sum : this.state.sum +(1/fraction)
       })
     }
+  
   render() {
+    const fractionblock = (<FractionBlock 
+      height= {500}
+      width = {500}
+      fraction = {1}
+      coordinates = {[0,0]}
+    />)
     return (
       <div id ="fraction-div">
       <FractionContext.Provider  value={{
@@ -36,12 +44,16 @@ class FractionContainer extends Component {
         dullURL : "url('/images/mountain-fade.jpg')",
         reset: this.state.reset
       }}>
-        <FractionBlock 
+        {/* <FractionBlock 
             height= {500}
             width = {500}
             fraction = {1}
             coordinates = {[0,0]}
-        />
+        /> */}
+
+        {fractionblock}
+
+        {this.state.clone && React.cloneElement(fractionblock)}
         <div class="btn-div">
         <button id="reset-btn" class=" btn btn-secondary" onClick={this.reset}>Reset</button>
         <button id="select-btn" class=" btn btn-info" onClick={this.select}>Select</button><h3>{this.state.sum}</h3>
