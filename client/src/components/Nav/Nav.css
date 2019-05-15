@@ -3,20 +3,25 @@
 }
 
 #nav {
-  height: 110px;
+  width: 100%;
+  text-align: center;
 }
 
-#logo{
-  margin-left: 0;
+ul {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
 }
 
-#progress{
-  float: left;
+ul li {
+  list-style: none;
+  padding: 10px;
 }
 
-#mgmt{
-  float: left;
+ul li:hover {
+  background: #000000;
 }
+
 
 /* .navbar-brand{
   width: 100px;
