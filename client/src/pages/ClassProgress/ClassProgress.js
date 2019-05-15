@@ -15,30 +15,22 @@ class ClassProgress extends React.PureComponent {
     super(props);
     this.state = {
       columns: [
-        { studentName: "name", title: "Student Name" },
-        { timeSpent: "time", title: "Hours Spent" },
+        { name: "firstName", title: "Student Name" },
         {
-          level: "grades",
+          name: "grades",
           title: "Student Level"
         },
         {
-          numberQuestionsAnswered: "numQuestAns",
+          name: "total",
           title: "Questions Answered"
         },
         {
-          numberQuestionsCorrect: "numCorrect",
+          name: "correct",
           title: "Answered Correct"
-        },
-        {
-          numberQuestionsWrong: "numWrong",
-          title: "Answered Incorrect"
         }
       ],
       rows: [
-        {
-          
-        }
-
+        
       ]
     };
   }
