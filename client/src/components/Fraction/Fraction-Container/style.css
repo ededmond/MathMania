@@ -1,7 +1,5 @@
 .FractionContainer{
     box-align: center;
-    /* background-color: rgba(275, 275, 275, .30);  
-    backdrop-filter: blur(5px); */
 }
 
 .btn-div{
@@ -22,8 +20,6 @@ h3 {
     color: navy;
     font-size: 35px;
     padding-left: 40%;
-    
-
 }
 
 #fraction-div{

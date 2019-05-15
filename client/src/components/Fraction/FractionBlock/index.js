@@ -4,7 +4,7 @@ import './style.css';
 import FractionContext from "../Fraction-context";
 import PiecesButton from "../pieces-button";
 const FractionBlock = props => {
-    const {select,addToSum,imageURL,dullURL,reset} = useContext(FractionContext);
+    const {select,addToSum,multiply,imageURL,dullURL,reset} = useContext(FractionContext);
     const [state,setState] = useState({
         pieces: 1,
         selected :false,
@@ -21,19 +21,13 @@ const FractionBlock = props => {
         })
     },[reset])
 
-    
-    
     //  This creates blocks within blocks depending on how many pieces it has been divided into
-    
-
     const recursion2 = ({width,height,fraction,coordinates},state) => {
         if (state.pieces > 1) {
             //  columns can only divide in certain circumstances
-            const columnsOK = true //(state.pieces === '3') || (state.pieces === '2');
             const fractionArray = Array.apply(null, Array(parseInt(state.pieces))).map(function () {});
-            
 
-            if (width > height && columnsOK) {
+            if (width > height) {
                 // const cols = state.pieces == 2 ? "col-6" : "col-4";
                 return (
                     <div className="row row-align">
@@ -67,7 +61,7 @@ const FractionBlock = props => {
                 )
             }
         } else {
-            return <p>1/{fraction}</p>
+            return <p>{multiply}/{fraction}</p>
         }
     }
 
@@ -124,6 +118,7 @@ const FractionBlock = props => {
                 backgroundImage: state.selected ? imageURL : dullURL
             }}
             onClick = {event => click(select,props,addToSum,event)} >
+            {props.children}
             {recursion2(props,state)}
             <PiecesButton show = {state.pieces==1 && state.showChoice} piecesReturn = {piecesReturn} />
         </div>)
