@@ -2,7 +2,7 @@ import "./style.css";
 import React from "react";
 
 const dilute =(index) => {
-    return 230-15*index
+    return 230-20*index
 }
 
 const MultiplyLayer = props => {
