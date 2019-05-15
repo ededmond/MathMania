@@ -23,13 +23,16 @@ module.exports = {
     }
   },
   grade:(req,res) => {
-    const difficulty = req.body.difficulty;
-    const correct = req.body.correct;
+    const difficulty = req.body.difficulty.toLowerCase();
+    const correct = req.body.result === "CORRECT!";
+    console.log(req.body);
+    console.log(req.user.grades[difficulty]);
     const grades = {};
     grades[difficulty] = {
       correct: correct ? req.user.grades[difficulty].correct + 1 : req.user.grades[difficulty].correct,
       total : req.user.grades[difficulty].total + 1
     }
+    console.log("got to grades api");
     db.User.findByIdAndUpdate(req.user._id,{
       grades
     }).then(response => {
