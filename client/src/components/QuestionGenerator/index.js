@@ -34,6 +34,12 @@ class QuestionGenerator extends Component{
                 sel.classList.remove('wrong');
             }
             document.getElementById('Radio'+this.state.selected).checked=false
+                  
+            axios.post('/auth/grades', {
+                difficulty: this.state.difficulty,
+                result: this.state.result
+            }).then(result => console.log('successfully posted'))
+            .catch(err => console.log(err));   
         }
         console.log(this.state.inRow)
     
@@ -79,12 +85,7 @@ class QuestionGenerator extends Component{
             document.getElementById(this.state.answer).classList.add('correct')
             document.getElementById(this.state.selected).classList.add('wrong');
         }
-        
-        axios.post('/auth/grades', {
-            difficulty: this.state.difficulty,
-            result: this.state.result
-        }).then(result => console.log('successfully posted'))
-        .catch(err => console.log(err));        
+       
     }
     render(){
         let choices= this.state.choices.map((x,i) => <div className= "form-check" id={i} key={i}><input className= "form-check-input"  id= {`Radio${i}`}type= 'radio' name= 'choicesRadio' data= 'select' onClick= {() => this.setState({ selected: i })} /><label className= "form-check-label"  htmlFor=  {'choicesRadio'+ i} dangerouslySetInnerHTML={{__html: this.handleConvert(x)}}></label></div>)
