@@ -9,6 +9,9 @@ export default {
   getStudents: function() {
     return axios.get('/auth/students');
   },
+  updateStudent: function(id,difficulty) {
+    return axios.post('/auth/students/'+id,{difficulty})
+  },
   // Logs the user out
   logout: function() {
     return axios.post('/auth/logout');

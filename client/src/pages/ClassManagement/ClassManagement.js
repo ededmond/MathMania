@@ -26,8 +26,7 @@ class ClassManagement extends Component {
   
 
   updateStudent = event => {
-    console.log("id",event.target.value);
-    console.log($("#"+event.target.value).val());
+    AUTH.updateStudent(event.target.value,$("#"+event.target.value).val());
   }
 
   render() {

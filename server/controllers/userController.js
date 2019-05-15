@@ -39,6 +39,17 @@ module.exports = {
       res.json(error);
     })
   },
+  changeLevel : (req,res) => {
+    console.log(req.params.id,req.body);
+    db.User.findOneAndUpdate({
+      teacherCode : req.user._id,
+      _id: req.params.id},{difficulty:req.body.difficulty})
+    .then(response => {
+      res.json(response);
+    }).catch(error => {
+      res.json(error);
+    })
+  },
   register: (req, res) => {
     const { firstName, lastName, username, password, email,teacherCode,teacher} = req.body;
     // ADD VALIDATION
