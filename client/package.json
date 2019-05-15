@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "jquery": "^3.4.1",
     "@devexpress/dx-react-grid": "^1.10.5",
     "axios": "^0.16.2",
     "confetti-js": "0.0.15",

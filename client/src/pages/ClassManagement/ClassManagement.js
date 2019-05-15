@@ -4,6 +4,8 @@ import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import API from "../../utils/API";
 import AUTH from "../../utils/AUTH";
+import $ from "jquery";
+import "./class.css";
 class ClassManagement extends Component {
   state = {
     students: []
@@ -20,6 +22,12 @@ class ClassManagement extends Component {
     }).catch(err => {
       console.log(err);
     })
+  }
+  
+
+  updateStudent = event => {
+    console.log("id",event.target.value);
+    console.log($("#"+event.target.value).val());
   }
 
   render() {
@@ -38,9 +46,19 @@ class ClassManagement extends Component {
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
-            {this.state.students.map(student => {
-              return(<article key={student._id}>
-                <h1>{student.firstName} {student.lastName}</h1>
+            {this.state.students.map((student,i) => {
+              return(<article className ="row" key={student._id}>
+                <div className = "col-4"><h1>{student.firstName} {student.lastName}</h1></div>
+                <div className = "col-4">
+                  <select id = {student._id} defaultValue = {student.difficulty}>
+                    <option value = "beginner">Beginner</option>
+                    <option value = "intermediate">Intermediate</option>
+                    <option value = "advanced">Advanced</option>
+                  </select>
+                </div>
+                <div className = "col-4">
+                  <button onClick = {this.updateStudent} value={student._id}>Update</button>
+                </div>
               </article>)
             })}
           </Col>
