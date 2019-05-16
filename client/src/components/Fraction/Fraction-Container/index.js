@@ -63,6 +63,7 @@ class FractionContainer extends Component {
             width = {500}
             fraction = {1}
             coordinates = {[0,0]}
+            
         >
           {this.layer()}
         </FractionBlock>

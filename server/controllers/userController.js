@@ -58,15 +58,21 @@ module.exports = {
           error: `Sorry, already a user with the username: ${username}`
         });
       }
-      const newUser = new db.User({
+      const userObject = {
         'firstName': firstName,
         'lastName': lastName,
         'username': username,
         'password': password,
         'email': email,
-        'teacherCode':teacherCode,
-        'isTeacher':teacher === "teacher"
-      });
+        // 'teacherCode':teacherCode ,
+        // 'isTeacher':teacher === "teacher"
+      }
+      if (!teacher) {
+        userObject.teacherCode = teacherCode;
+      }
+      const newUser = new db.User(
+        userObject
+      );
       newUser.save((err, savedUser) => {
         if (err) return res.json(err);
         return res.json(savedUser);
