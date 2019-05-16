@@ -4,11 +4,12 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "jquery": "^3.4.1",
     "@devexpress/dx-react-grid": "^1.10.5",
     "axios": "^0.16.2",
     "confetti-js": "0.0.15",
+    "jquery": "^3.4.1",
     "react": "^16.0.0",
+    "react-acrylic": "^0.1.1",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.14"

@@ -6,9 +6,10 @@ import {
   TableHeaderRow
 } from "@devexpress/dx-react-grid-bootstrap4"; 
 import "@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css";
-import Jumbotron from "../../components/AlperComponents/Jumbotron";
+//import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
+import Acrylic from 'react-acrylic'; 
 
 class ClassProgress extends React.PureComponent {
   constructor(props) {
@@ -80,22 +81,35 @@ class ClassProgress extends React.PureComponent {
     const { rows, columns } = this.state;
 
     return (
-      <Container fluid>
+        <Acrylic
+          colorOverlay='#eee'
+          opacity='0.4'
+
+          position='absolute'
+          top='100px'
+          left='100px'
+          width='1000px'
+          height='600px'
+
+          blur={40}
+          borderRadius='2px'
+          borderRadius='2px'
+        >
         <Row>
-          <Col size="md-12">
-              <h1>Student Data</h1>
-          </Col>
+            <Col size="md-12">
+              <h1 id="title">Student Data</h1>
+            </Col>
         </Row>
         <Row>
           <Col size="md-6" />
         </Row>
         <Row>
-          <Grid rows={rows} columns={columns}>
+          <Grid className="grid" rows={rows} columns={columns}>
             <Table />
             <TableHeaderRow />
           </Grid>
         </Row>
-      </Container>
+        </Acrylic>
     );
   }
 }
