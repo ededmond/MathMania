@@ -30,6 +30,16 @@
   
 }
 
+#score{
+    padding-top: 2%;
+    text-align: center;
+    font-weight: bolder;
+    color: #EB6864;
+    font-style: italic;
+    font-size: 25px;
+  
+}
+
 h4{
     color: navy;
     size: 30px;
@@ -41,6 +51,7 @@ h4{
     text-align: center;
     color: navy;
     font-weight: bold;
+    font-size: 35px;
 }
 
 .form-check{
@@ -58,6 +69,6 @@ h4{
 }
 
 .question-buttons{
-    padding-left: 20%;
+    text-align: center;
 }
 
