@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { Link } from 'react-router-dom';
-import { Col } from '../AlperComponents/Grid';
 import './Nav.css';
 
 const Nav = (props) => {
