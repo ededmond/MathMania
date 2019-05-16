@@ -74,7 +74,10 @@ module.exports = {
         userObject
       );
       newUser.save((err, savedUser) => {
-        if (err) return res.json(err);
+        if (err) {
+          res.status(500)
+          return res.json(err)
+        };
         return res.json(savedUser);
       });
     });
