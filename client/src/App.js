@@ -86,7 +86,7 @@ class App extends Component {
                 <Route exact path="/students" component={() => <ClassManagement user={this.state.user} />} />
                  <Route
                   exact
-                  path="/dashboard"
+                  path="/classProgress"
                   component={() => <ClassProgress user={this.state.user} />}
                 />
 
