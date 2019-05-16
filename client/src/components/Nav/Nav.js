@@ -5,7 +5,7 @@ import './Nav.css';
 
 const Nav = (props) => {
   let greeting;
-
+  console.log('PROPS ', props)
   if (props.user === null) {
 		greeting = <p>Hello guest</p>
 	} else if (props.user.firstName) {
@@ -40,8 +40,11 @@ const Nav = (props) => {
                   }>
               Let's Play
             </Link>
-          </li>
+          </li> 
 
+          {/* if you don't have a teacher code then you're the teacher */}
+          {!props.user.teacherCode && 
+          <React.Fragment>
           <li id= "progress" className="nav-item">
             <Link to="/classProgress"
               className={window.location.pathname === "/classProgress" ? "nav-link active" : "nav-link"}>
@@ -55,6 +58,8 @@ const Nav = (props) => {
               Class Management
             </Link>
           </li>
+          </React.Fragment>
+          }
 
           <li id="logout" className="nav-item">
             <Link to="/signin" 
@@ -66,44 +71,7 @@ const Nav = (props) => {
 
         </ul>
         
-
-
-
-
-
-  {/* <Col size="md-9"> */}
-      {/* <Link  className="navbar-brand" to="/" >
-      
-      </Link> */}
-      
-      {/* <div>
-        <ul className="navbar-nav">
-        <li className="nav-item">
-        <img height="40%" width="40%" src="/images/logo.PNG"/>
-        </li>
-          <li className="nav-item">
-            <Link to="/"
-              className={window.location.pathname === "/" || window.location.pathname === "/"
-                  ? "nav-link active"
-                  : "nav-link"
-              }>
-              Class Progress
-            </Link>
-          </li>
-
-          <li className="nav-item">
-            <Link to="/"
-              className={window.location.pathname === "/students" ? "nav-link active" : "nav-link"}>
-              Class Management
-            </Link>
-          </li>
-        </ul> */}
-      {/* </div> */}
-  {/* </Col> */}
-          
-
     </nav>
-
   )
 };
 
