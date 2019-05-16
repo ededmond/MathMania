@@ -54,8 +54,8 @@ class FractionContainer extends Component {
         select:this.state.select, 
         addToSum:this.addToSum,
         multiply: this.state.multiply,
-        imageURL :"url('/images/mountain.jpg')",
-        dullURL : "url('/images/mountain-fade.jpg')",
+        imageURL :"url('/images/ET.jpg')",
+        dullURL : "url('/images/ET2.jpg')",
         reset: this.state.reset
       }}>
         <FractionBlock 
