@@ -23,7 +23,7 @@ const Nav = (props) => {
   }
   
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary" id= "nav">
+    <nav className="navbar navbar-expand-lg navbar-dark" id= "nav">
         <a class="navbar-brand" href="/">
           <div id="logo">
             <img height="40%" width="40%" src="images/transparent-logo.png"/>
@@ -33,14 +33,21 @@ const Nav = (props) => {
 
     
 
-        <ul class="nav navbar-nav ml-auto">
+        <ul class="nav navbar-nav" id="nav-items">
 
-          <li id= "progress"className="nav-item">
+        <li id= "play"className="nav-item">
             <Link to="/"
               className={window.location.pathname === "/" || window.location.pathname === "/"
                   ? "nav-link active"
                   : "nav-link"
                   }>
+              Let's Play
+            </Link>
+          </li>
+
+          <li id= "progress" className="nav-item">
+            <Link to="/"
+              className={window.location.pathname === "/students" ? "nav-link active" : "nav-link"}>
               Class Progress
             </Link>
           </li>

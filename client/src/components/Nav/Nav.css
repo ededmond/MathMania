@@ -19,13 +19,29 @@ ul li {
 }
 
 ul li:hover {
-  background: #000000;
+  background-color: rgba(275, 275, 275, .25);  
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
 }
 
 
-/* .navbar-brand{
-  width: 100px;
-} */
+.navbar-brand{
+  float: left;
+  text-align: left;
+}
+
+#nav-items{
+  float: right;
+  font-size: 17px;
+  text-align: right;
+  padding-left: 20%;
+  padding-right: 5px;
+}
+
+.navbar{
+  background-color: #f4654e;
+  opacity: .95;
+}
 
 
 
