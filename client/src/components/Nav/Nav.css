@@ -23,9 +23,18 @@ ul li:hover {
 }
 
 
-/* .navbar-brand{
-  width: 100px;
-} */
+.navbar-brand{
+  float: left;
+  text-align: left;
+}
+
+#nav-items{
+  float: right;
+  font-size: 15px;
+  text-align: right;
+  padding-left: 25%;
+  padding-right: 5px;
+}
 
 
 
