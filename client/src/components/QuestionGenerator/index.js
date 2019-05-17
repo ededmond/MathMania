@@ -24,6 +24,7 @@ class QuestionGenerator extends Component{
         result: '', 
         total: 0,
         inRow: 0,
+        bonus: 0
     }
     handleQuestionPost = () => {
         let ans =  document.getElementById(this.state.answer)
@@ -41,7 +42,6 @@ class QuestionGenerator extends Component{
             }).then(result => console.log('successfully posted'))
             .catch(err => console.log(err));   
         }
-        console.log(this.state.inRow)
     
      axios.post('/api/questions')
      .then(result =>{
@@ -57,10 +57,12 @@ class QuestionGenerator extends Component{
             choices,
             answer,
             difficulty, 
-            result: ''
+            result: '',
+            bonus: 0
         })
      })
-     .catch(err => console.log(err))
+     .catch(err => console.log(err));
+     document.getElementById('bonus').style.display= 'none'
 
     }
     handleStart = (e) => {
@@ -73,18 +75,27 @@ class QuestionGenerator extends Component{
         let temp2= temp.split('<mfrac><mn>').join('<mfrac><sup>');
         return temp2.split('</mn></mfrac>').join('</sub><mfrac>');
     }
-    handleSubmit = () => {
-        if(this.state.answer === this.state.selected){
-            this.setState({result:'CORRECT!'})
-            const random= Math.floor(Math.random()*10)+1
-            this.state.inRow%3===0 && this.state.inRow !=0?  this.setState({total: this.state.total + random, inRow: this.state.inRow + 1}) : this.setState({ total: this.state.total + 1, inRow: this.state.inRow + 1})
-            document.getElementById(this.state.answer).classList.add('correct')
 
-        }else{
-            this.setState({result:'Try again...', inRow: 0});
-            document.getElementById(this.state.answer).classList.add('correct')
-            document.getElementById(this.state.selected).classList.add('wrong');
-        }
+    handleSubmit = () => {
+        if(this.state.result=== ''){
+            if(this.state.answer === this.state.selected){
+                this.confetti();
+                this.setState({result:'CORRECT!'})
+                const random= Math.floor(Math.random()*10)+1
+                if(this.state.inRow%3===0 && this.state.inRow !=0){
+                    this.setState({total: this.state.total + random, bonus: random, inRow: this.state.inRow + 1})
+                    document.getElementById('bonus').style.display= 'block'
+                }else{
+                    this.setState({ total: this.state.total + 1, inRow: this.state.inRow + 1})
+                }
+                document.getElementById(this.state.answer).classList.add('correct')
+                
+            }else{
+                this.setState({result:'Try again...', inRow: 0});
+                document.getElementById(this.state.answer).classList.add('correct')
+                document.getElementById(this.state.selected).classList.add('wrong');
+            }
+        } else console.log('CHEATER!')
        
     }
     render(){
@@ -102,6 +113,7 @@ class QuestionGenerator extends Component{
                         <button id="question-submit" class=" btn btn-info" onClick= {this.handleSubmit}>Submit</button> <button id="question-next" class=" btn btn-info" onClick= {this.handleQuestionPost}>Next</button>
                     </div>
                     <div ><h5 id="score">Score: {this.state.total}</h5></div>
+                    <div id= 'bonus'><div id= 'bonus-p'>{this.state.bonus} BONUS POINTS</div></div>
                     
                     <h3>{this.state.result}</h3>
                 </div>
