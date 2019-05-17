@@ -79,7 +79,6 @@ class QuestionGenerator extends Component{
     handleSubmit = () => {
         if(this.state.result=== ''){
             if(this.state.answer === this.state.selected){
-                this.confetti();
                 this.setState({result:'CORRECT!'})
                 const random= Math.floor(Math.random()*10)+1
                 if(this.state.inRow%3===0 && this.state.inRow !=0){
