@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = (props) => {
@@ -61,11 +61,11 @@ const Nav = (props) => {
           }
 
           <li id="logout" className="nav-item">
-            <Link to="/signin" 
+            <NavLink to="/signin" 
               className="nav-link logout" 
               onClick={props.logout}>
               {greeting} - Logout
-            </Link>
+            </NavLink>
           </li>
 
         </ul>
