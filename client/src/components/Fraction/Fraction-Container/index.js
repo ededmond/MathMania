@@ -67,6 +67,9 @@ class FractionContainer extends Component {
         >
           {this.layer()}
         </FractionBlock>
+        <div style = {{
+          height: this.state.multiply*10
+        }}></div>
         <MultiplySlider 
           multiply={this.state.multiply}
           onChange = {this.changeMultiply}

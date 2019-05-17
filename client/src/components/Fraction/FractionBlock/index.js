@@ -21,6 +21,15 @@ const FractionBlock = props => {
         })
     },[reset])
 
+    const simplify = (num, den) => {
+        var gcd = function gcd(a,b){
+        return b ? gcd(b, a%b) : a;
+        };
+      gcd = gcd(num,den);
+      return <math><sup>{num/gcd}</sup>/<sub>{den/gcd}</sub></math>
+    }
+    
+
     //  This creates blocks within blocks depending on how many pieces it has been divided into
     const recursion2 = ({width,height,fraction,coordinates},state) => {
         if (state.pieces > 1) {
@@ -61,7 +70,7 @@ const FractionBlock = props => {
                 )
             }
         } else {
-            return <p>{multiply}/{fraction}</p>
+            return <p>{simplify(multiply,fraction)}</p>
         }
     }
 
