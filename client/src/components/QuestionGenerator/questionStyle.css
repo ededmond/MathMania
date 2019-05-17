@@ -86,4 +86,69 @@ h4{
 .question-buttons{
     text-align: center;
 }
+#bonus-p{
+    font-weight: bold;
+    font-size: 110%;
+    padding: 3%;
+    color: white;
+    text-align: center;
+    height:40;
+    width:40;
+    transform: rotate(-23deg);
+}
 
+#bonus{
+    width: 80px;
+    height: 80px;
+    background-color: #f4654e;
+    position: relative;
+    -webkit-animation-name: bonus; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: bonus;
+    animation-duration: 4s;
+    transform: rotate(20deg);
+}
+#bonus:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: #f4654e;
+    transform: rotate(135deg);
+    animation: backBonus 5s forwards;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes bonus {
+0%   {background-color:#f4654e; left:0px; top:0px;}
+25%  {background-color:yellow; left:200px; top:0px;}
+75%  {background-color:#f4654e; left:1px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes bonus {
+0%   {background-color:#f4654e; left:0px; top:0px;}
+25%  {background-color:yellow; left:200px; top:0px;}
+75%  {background-color:#f4654e; left:1px; top:0px;}
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes backBonus {
+    0%   {background-color:#f4654e; }
+    25%  {background-color:yellow; }
+    75%  {background-color:#f4654e; }
+}
+
+/* Standard syntax */
+@keyframes backBonus {
+0%   {background-color:#f4654e;}
+25%  {background-color:yellow; }
+75%  {background-color:#f4654e; }
+}
+    
