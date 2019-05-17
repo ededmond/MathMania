@@ -17,16 +17,19 @@ class ClassProgress extends React.PureComponent {
     this.state = {
       columns: [
         { name: "firstName", title: "Student Name",
-        getCellValue:(row,columnName) => {
-        return (
-          row.firstName + " " + row.lastName
-        ); 
-      } 
-    },
+          getCellValue:(row,columnName) => {
+            return (
+              row.firstName + " " + row.lastName
+            ); 
+          } 
+        },
         {
-          name: "grades",
+          name: "beginner",
           title: "Beginner Score",
           getCellValue: (row,columnName) => {
+            console.log(row.grades.beginner.correct +
+              "/" +
+              row.grades.beginner.total);
             return (
               row.grades.beginner.correct +
               "/" +
@@ -35,7 +38,7 @@ class ClassProgress extends React.PureComponent {
           }
         },
         {
-          name: "grades",
+          name: "intermediate",
           title: "Intermediate Score", 
           getCellValue: (row,columnName) => {
             return (
@@ -46,7 +49,7 @@ class ClassProgress extends React.PureComponent {
           }
         },
         {
-          name: "grades",
+          name: "advanced",
           title: "Advanced Score", 
           getCellValue: (row, columnName) => {
             return (
