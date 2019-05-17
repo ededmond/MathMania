@@ -26,6 +26,9 @@ const FractionBlock = props => {
         return b ? gcd(b, a%b) : a;
         };
       gcd = gcd(num,den);
+      if (den === 1) {
+          return num;
+      } else
       return <math><sup>{num/gcd}</sup>/<sub>{den/gcd}</sub></math>
     }
     
