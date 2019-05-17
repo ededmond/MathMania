@@ -73,7 +73,7 @@ const FractionBlock = props => {
                 )
             }
         } else {
-            return <p>{simplify(multiply,fraction)}</p>
+            return <p><bold>{simplify(multiply,fraction)}</bold></p>
         }
     }
 
