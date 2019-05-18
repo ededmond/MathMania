@@ -43,27 +43,22 @@ class ClassManagement extends Component {
           </Col>
         </Row>
         <Row id = "managment-row">
-          <Col size="md-10 col-centered">
+          <Col size="md-8 col-centered">
             {this.state.students.map((student,i) => {
               return(<article className ="row" key={student._id}>
                 <div className = "col-4"><h1>{student.firstName} {student.lastName}</h1></div>
                 <div className = "col-4">
-                  <select id = {student._id} defaultValue = {student.difficulty}>
+                  <select className="btn btn-info dropdown-toggle" id = {student._id} defaultValue = {student.difficulty}>
                     <option value = "beginner">Beginner</option>
                     <option value = "intermediate">Intermediate</option>
                     <option value = "advanced">Advanced</option>
                   </select>
                 </div>
                 <div className = "col-4">
-                  <button class="fraction-button btn btn-info" onClick = {this.updateStudent} value={student._id}>Update</button>
+                  <button class="fraction-button btn btn-success" onClick = {this.updateStudent} value={student._id}>Update</button>
                 </div>
               </article>)
             })}
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/"><button className = "fraction-button btn btn-info">← Return to game</button></Link>
           </Col>
         </Row>
       </Container>
