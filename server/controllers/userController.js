@@ -67,9 +67,10 @@ module.exports = {
         // 'teacherCode':teacherCode ,
         // 'isTeacher':teacher === "teacher"
       }
-      if (!teacher) {
+      if (teacher === 'student') {
         userObject.teacherCode = teacherCode;
       }
+      console.log(userObject);
       const newUser = new db.User(
         userObject
       );

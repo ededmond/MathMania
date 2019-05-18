@@ -6,7 +6,7 @@ import {
   TableHeaderRow
 } from "@devexpress/dx-react-grid-bootstrap4"; 
 import "@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css";
-import { Col, Row, Container } from "../../components/AlperComponents/Grid";
+import { Col, Row} from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 import Acrylic from 'react-acrylic'; 
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
@@ -98,7 +98,6 @@ class ClassProgress extends React.PureComponent {
           padding="3%"
 
           blur={40}
-          borderRadius='2px'
           borderRadius='2px'
         >
         <Jumbotron>
