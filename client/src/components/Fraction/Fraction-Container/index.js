@@ -9,7 +9,9 @@ class FractionContainer extends Component {
       select : false,
       sum: 0,
       multiply: 1,
-      reset: false
+      reset: false,
+      imageURL: '',
+      dullURL: ''
     }
     reset = () => {
       this.setState({
@@ -47,6 +49,24 @@ class FractionContainer extends Component {
       })}
     </div>)
   }
+  componentDidMount(){
+    if(this.props.user.difficulty === 'beginner'){
+      this.setState({ 
+        imageURL: "url('/images/ET.jpg')",
+        dullURL : "url('/images/ET2.jpg')"
+      })
+    }else if(this.props.user.difficulty=== 'intermediate'){
+      this.setState({ 
+        imageURL: "url('/images/wallie.png')",
+        dullURL : "url('/images/wallie2.png')"
+      })
+    }else {
+      this.setState({ 
+        imageURL: "url('/images/yoda.jpeg')",
+        dullURL : "url('/images/yoda2.jpg')"
+      })
+    }
+  }
   render() {
     return (
       <div id ="fraction-div">
@@ -54,8 +74,8 @@ class FractionContainer extends Component {
         select:this.state.select, 
         addToSum:this.addToSum,
         multiply: this.state.multiply,
-        imageURL :"url('/images/ET.jpg')",
-        dullURL : "url('/images/ET2.jpg')",
+        imageURL : this.state.imageURL,
+        dullURL : this.state.dullURL,
         reset: this.state.reset
       }}>
         <FractionBlock 

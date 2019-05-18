@@ -114,7 +114,7 @@ class Game extends Component {
               </List> */}
             {/* ) : (
               // <h3>No Results to Display</h3> */}
-              <FractionContainer />
+              <FractionContainer user= {this.props.user} />
             {/* )} */}
           </Col>
 
