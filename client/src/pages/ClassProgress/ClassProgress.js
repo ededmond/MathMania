@@ -10,6 +10,7 @@ import { Col, Row} from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 import Acrylic from 'react-acrylic'; 
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
+import './progress.css'
 
 class ClassProgress extends React.PureComponent {
   constructor(props) {
@@ -85,9 +86,10 @@ class ClassProgress extends React.PureComponent {
 
     return (
    
-        <Acrylic id="progress"
-          colorOverlay='#eee'
-          opacity='0.4'
+        <Acrylic
+          backgroundColor="rgba(275, 275, 275, .65); "
+          backdropFilter="blur(10px)"
+
 
           // position='absolute'
           top='25%'
@@ -95,25 +97,24 @@ class ClassProgress extends React.PureComponent {
           width='1200px'
           height='600px'
           align="center"
-          padding="3%"
 
           blur={40}
           borderRadius='2px'
         >
-        <Jumbotron>
-        <Row>
+  
+        <Row id="title-div">
             <Col size="md-12">
               <h1 id="title">Student Data</h1>
             </Col>
         </Row>
-        </Jumbotron>
+      
 
         {/* <Row>
           <Col size="md-6" />
         </Row> */}
         <Row>
           <Grid className="grid" rows={rows} columns={columns}>
-            <Table style={{ padding:"5%" }} />
+            <Table />
             <TableHeaderRow />
           </Grid>
         </Row>
