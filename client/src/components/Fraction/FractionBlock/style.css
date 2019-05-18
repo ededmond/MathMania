@@ -1,16 +1,9 @@
 .fraction-block {
     margin: 0px;
     border:none;
-    /* background-image: url("/images/mountain.jpg"); */
-    /* background-size: 500px; */
-    /* visibility : hidden; */
-    /* opacity:.45; */
-
 }
 .shown{
     border: 1px black solid;
-    /* opacity: .45; */
-    /* z-index : 99; */
 }
 
 .selected {
@@ -31,6 +24,13 @@
 p {
     text-align : center;
     margin: auto;
+
+    font-weight: bolder;
+    padding: 5px;
+    padding-right:5px;
+    background-color: rgba(275, 275, 275, .65);  
+    background: radial-gradient(white 30%, transparent 70%);
+    border-radius: 25px;
 }
 
 /* buttons */
