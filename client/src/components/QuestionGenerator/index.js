@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './questionStyle.css';
-import { userInfo } from 'os';
 
    
 const noDisplay = {
@@ -80,7 +79,7 @@ class QuestionGenerator extends Component{
             if(this.state.answer === this.state.selected){
                 this.setState({result:'CORRECT!'})
                 const random= Math.floor(Math.random()*10)+1
-                if(this.state.inRow%3===0 && this.state.inRow !=0){
+                if(this.state.inRow%3===0 && this.state.inRow !==0){
                     this.setState({total: this.state.total + random, bonus: random, inRow: this.state.inRow + 1})
                     document.getElementById('bonus').style.display= 'block'
                 }else{
@@ -102,13 +101,13 @@ class QuestionGenerator extends Component{
  
         return(
             <div id="buttons">            
-                <button id ='start' class="btn animated bounce infinite" style= {display} onClick= {this.handleStart}>Let's Play!</button>
+                <button id ='start' className="btn animated bounce infinite" style= {display} onClick= {this.handleStart}>Let's Play!</button>
                 <div id= 'question' style = {noDisplay}>
                     <h1 id="Evaluate">{this.state.instructions} Earthling</h1>
                     <h4 dangerouslySetInnerHTML={{__html: question}}></h4>
                     {choices}
-                    <div class="question-buttons">
-                        <button id="question-submit" class=" btn btn-info" onClick= {this.handleSubmit}>Submit</button> <button id="question-next" class=" btn btn-info" onClick= {this.handleQuestionPost}>Next</button>
+                    <div className="question-buttons">
+                        <button id="question-submit" className=" btn btn-info" onClick= {this.handleSubmit}>Submit</button> <button id="question-next" className=" btn btn-info" onClick= {this.handleQuestionPost}>Next</button>
                     </div>
                     <div ><h5 id="score">Score: {this.state.total}</h5></div>
                     <div id= 'bonus'><div id= 'bonus-p'>{this.state.bonus} BONUS POINTS</div></div>

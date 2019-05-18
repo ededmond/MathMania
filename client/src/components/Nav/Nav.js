@@ -23,13 +23,13 @@ const Nav = (props) => {
   
   return (
     <nav className="navbar navbar-expand-lg navbar-dark" id= "nav">
-        <a class="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           <div id="logo">
             <img height="40%" width="40%" src="images/transparent-logo.png" alt="math-mania-logo" />
           </div>
         </a>
 
-        <ul class="nav navbar-nav" id="nav-items">
+        <ul className="nav navbar-nav" id="nav-items">
 
         <li id= "play"className="nav-item">
             <Link to="/"
