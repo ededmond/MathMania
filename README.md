@@ -21,18 +21,26 @@ Node - https://nodejs.org/en/download/
 ```Run``` ```npm start``` to start the badge server and the frontend dev server.
 ```Open``` ```http://localhost:3000/``` to view the frontend.
 
+## Technology Used
+
+
 ### Contributors
 
 
 
+#### Contributing
 
-Students and teachers will be able to track their activities and progress. 
+## Hosting
 
-Student and teacher authentication
+This application is hosted on heroku ```https://dashboard.heroku.com/apps/math-mania```
 
-Student and teachers accounts
+## How to Play
 
-Teachers will be able to set a student’s fraction level (beginning, intermediate and advanced)
+Teachers provide a teacher code to their students.  Once the student signs in and plays the game the teacher is able to track there progress.  The Teachers will be able to set a student’s fraction level (beginning, intermediate and advanced)
+
+![Recordit GIF] (http://recordit.co/3lEn9DmXaK.gif)
+
+
 
 Students have the option to “Explore Fractions” and just play with the interactive block, or they can be given word problems
 
