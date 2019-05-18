@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './questionStyle.css';
 import { userInfo } from 'os';
-
+//import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
    
 const noDisplay = {
     display: 'none'
@@ -11,7 +12,7 @@ const display = {
     display: 'block'
 }
 
-
+//const { width, height } = useWindowSize()
 
 class QuestionGenerator extends Component{
     state= {
@@ -26,6 +27,7 @@ class QuestionGenerator extends Component{
         inRow: 0,
         bonus: 0
     }
+    
     handleQuestionPost = () => {
         let ans =  document.getElementById(this.state.answer)
         let sel= document.getElementById(this.state.selected)
@@ -74,12 +76,16 @@ class QuestionGenerator extends Component{
         let temp2= temp.split('<mfrac><mn>').join('<mfrac><sup>');
         return temp2.split('</mn></mfrac>').join('</sub><mfrac>');
     }
-
+    handleConffetiStop = () => {
+        document.getElementById('confetti').style.display= 'none'
+    }
     handleSubmit = () => {
         if(this.state.result=== ''){
             if(this.state.answer === this.state.selected){
                 this.setState({result:'CORRECT!'})
                 const random= Math.floor(Math.random()*10)+1
+                document.getElementById('confetti').style.display= 'block'
+                setTimeout(this.handleConffetiStop, 3000);
                 if(this.state.inRow%3===0 && this.state.inRow !=0){
                     this.setState({total: this.state.total + random, bonus: random, inRow: this.state.inRow + 1})
                     document.getElementById('bonus').style.display= 'block'
@@ -101,7 +107,9 @@ class QuestionGenerator extends Component{
         let question = `<math>${this.handleConvert(this.state.question)}</math>`;
  
         return(
-            <div id="buttons">            
+            
+            <div id="buttons">    
+                <Confetti id= 'confetti'/>        
                 <button id ='start' class="btn animated bounce infinite" style= {display} onClick= {this.handleStart}>Let's Play!</button>
                 <div id= 'question' style = {noDisplay}>
                     <h1 id="Evaluate">{this.state.instructions} Earthling</h1>
