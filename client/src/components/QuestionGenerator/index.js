@@ -42,7 +42,7 @@ class QuestionGenerator extends Component{
             }).then(result => console.log('successfully posted'))
             .catch(err => console.log(err));   
         }
-    
+        
      axios.post('/api/questions')
      .then(result =>{
         console.log(result.data)
@@ -63,7 +63,6 @@ class QuestionGenerator extends Component{
      })
      .catch(err => console.log(err));
      document.getElementById('bonus').style.display= 'none'
-
     }
     handleStart = (e) => {
        this.handleQuestionPost();
