@@ -12,14 +12,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-```
-Node
-NPM
-```
+Node - https://nodejs.org/en/download/
+
+### Installation
+
+```Clone this repository``` https://github.com/ededmond/MathMania.git. 
+```Run``` ```npm i``` to install the dependencies.
+```Run``` ```npm start``` to start the badge server and the frontend dev server.
+```Open``` ```http://localhost:3000/``` to view the frontend.
+
+### Contributors
 
 
-
-# Overview of Application:
 
 
 Students and teachers will be able to track their activities and progress. 
