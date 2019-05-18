@@ -50,7 +50,7 @@ class FractionContainer extends Component {
     })
   }
   layer = () => {
-    const multiplyArray = Array.apply(null, Array(parseInt(this.state.multiply))).map(function () {});
+    const multiplyArray = Array.apply(null, Array(parseInt(this.state.multiply,10))).map( () =>{return 1});
     return (<div className = "layers">
       {multiplyArray.map((value,index,array) => {
         return(<MultiplyLayer key = {index}
@@ -107,9 +107,9 @@ class FractionContainer extends Component {
           onChange = {this.changeMultiply}
         />
 
-        <div class="btn-div">
-        <button id="reset-btn" class=" btn btn-secondary" onClick={this.reset}>Reset</button>
-        <button id="select-btn" class=" btn btn-info" onClick={this.select}>Select</button>
+        <div className="btn-div">
+        <button id="reset-btn" className=" btn btn-secondary" onClick={this.reset}>Reset</button>
+        <button id="select-btn" className=" btn btn-info" onClick={this.select}>Select</button>
         <h3>
           {Object.keys(this.state.sum).map((fraction,index,array) => {
             const num = this.state.sum[fraction] * this.state.multiply;

@@ -31,21 +31,20 @@ const FractionBlock = props => {
       } else
       return <math><sup>{num/gcd}</sup>/<sub>{den/gcd}</sub></math>
     }
-    
 
     //  This creates blocks within blocks depending on how many pieces it has been divided into
     const recursion2 = ({width,height,fraction,coordinates},state) => {
         if (state.pieces > 1) {
             //  columns can only divide in certain circumstances
-            const fractionArray = Array.apply(null, Array(parseInt(state.pieces))).map(function () {});
+            const fractionArray = Array.apply(null, Array(parseInt(state.pieces,10))).map(function () {return 1});
 
             if (width > height) {
-                // const cols = state.pieces == 2 ? "col-6" : "col-4";
                 return (
                     <div className="row row-align">
                     {fractionArray.map((item,index,fractionArray) => {
                         return (<div>
                             <FractionBlock 
+                                key = {Math.random()}
                                 height= {height}
                                 width = {(width / state.pieces)}
                                 fraction = {fraction * state.pieces}
@@ -62,6 +61,7 @@ const FractionBlock = props => {
                         {fractionArray.map((item,index,fractionArray) => {
                             return (<div className="row" key ={index}>
                                 <FractionBlock 
+                                key = {Math.random()}
                                 height= {height / state.pieces}
                                 width = {width}
                                 fraction = {fraction * state.pieces}
@@ -73,7 +73,7 @@ const FractionBlock = props => {
                 )
             }
         } else {
-            return <p><bold>{simplify(multiply,fraction)}</bold></p>
+            return <p><strong>{simplify(multiply,fraction)}</strong></p>
         }
     }
 
@@ -120,7 +120,7 @@ const FractionBlock = props => {
         }
         
     }
-
+// eslint-disable-next-line
     return (<div name ="fractionblock" className = {"card fraction-block " + (state.selected && " selected") +(state.pieces == 1 && " shown")}
             style = {{
                 height:props.height || "500px", 
@@ -132,7 +132,7 @@ const FractionBlock = props => {
             onClick = {event => click(select,props,addToSum,event)} >
             {props.children}
             {recursion2(props,state)}
-            <PiecesButton show = {state.pieces==1 && state.showChoice} piecesReturn = {piecesReturn} />
+            <PiecesButton show = {state.pieces===1 && state.showChoice} piecesReturn = {piecesReturn} />
         </div>)
 }
 

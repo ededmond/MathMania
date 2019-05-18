@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './questionStyle.css';
-import { userInfo } from 'os';
-//import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
    
 const noDisplay = {
@@ -11,8 +9,6 @@ const noDisplay = {
 const display = {
     display: 'block'
 }
-
-//const { width, height } = useWindowSize()
 
 class QuestionGenerator extends Component{
     state= {
@@ -86,7 +82,7 @@ class QuestionGenerator extends Component{
                 const random= Math.floor(Math.random()*10)+1
                 document.getElementById('confetti').style.display= 'block'
                 setTimeout(this.handleConffetiStop, 3000);
-                if(this.state.inRow%3===0 && this.state.inRow !=0){
+                if(this.state.inRow%3===0 && this.state.inRow !==0){
                     this.setState({total: this.state.total + random, bonus: random, inRow: this.state.inRow + 1})
                     document.getElementById('bonus').style.display= 'block'
                 }else{
@@ -110,13 +106,13 @@ class QuestionGenerator extends Component{
             
             <div id="buttons">    
                 <Confetti id= 'confetti'/>        
-                <button id ='start' class="btn animated bounce infinite" style= {display} onClick= {this.handleStart}>Let's Play!</button>
+                <button id ='start' className="btn animated bounce infinite" style= {display} onClick= {this.handleStart}>Let's Play!</button>
                 <div id= 'question' style = {noDisplay}>
                     <h1 id="Evaluate">{this.state.instructions} Earthling</h1>
                     <h4 dangerouslySetInnerHTML={{__html: question}}></h4>
                     {choices}
-                    <div class="question-buttons">
-                        <button id="question-submit" class=" btn btn-info" onClick= {this.handleSubmit}>Submit</button> <button id="question-next" class=" btn btn-info" onClick= {this.handleQuestionPost}>Next</button>
+                    <div className="question-buttons">
+                        <button id="question-submit" className=" btn btn-info" onClick= {this.handleSubmit}>Submit</button> <button id="question-next" className=" btn btn-info" onClick= {this.handleQuestionPost}>Next</button>
                     </div>
                     <div ><h5 id="score">Score: {this.state.total}</h5></div>
                     <div id= 'bonus'><div id= 'bonus-p'>{this.state.bonus} BONUS POINTS</div></div>

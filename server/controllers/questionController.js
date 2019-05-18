@@ -8,7 +8,10 @@ module.exports = {
         console.log(response.data)
         res.json(response.data)
       })
-      .catch(err => res.status(422).json(err));
+      .catch(err => {
+        console.log(err);
+        res.status(422).json(err)
+      });
   }
 }
 
