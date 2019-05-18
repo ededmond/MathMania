@@ -1,32 +1,39 @@
-#title {
-    align-content: center;
-}
-
-#progress{
-    padding-top: 5%;
-    align-content: center;
-}
 
 #title{
-    color: white;
+    color: #12134f;
     font-weight: bolder;
+    align-content: center;
 }
 
-/* #table{
-    width: 500px;
-    padding: 5%;
+table{
+    margin: auto;
+    border-radius: 25px;
 }
 
-.grid{
-    padding: 5%;
-
+.row{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 1%;
 }
 
-thead{
-    padding: 5%;
+th{
+    text-align: center;
+    color: #12134f;
+    font-size: 22px;
+}
+
+tr{
     text-align: center;
 }
 
-.dx-rg-bs4-table-header-title{
-    text-align: center
-} */
+thead{
+    text-align: center;
+}
+
+td{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
