@@ -17,6 +17,11 @@
     margin-right: 0px;
     width: 100%;
 }
+
+.row {
+    padding: 0px !important;
+}
+
 .row-align {
     margin-right: 0px;
     margin-left:0px;
