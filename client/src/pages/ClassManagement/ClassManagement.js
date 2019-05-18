@@ -42,8 +42,8 @@ class ClassManagement extends Component {
             </Jumbotron>
           </Col>
         </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
+        <Row id = "managment-row">
+          <Col size="md-10 col-centered">
             {this.state.students.map((student,i) => {
               return(<article className ="row" key={student._id}>
                 <div className = "col-4"><h1>{student.firstName} {student.lastName}</h1></div>
@@ -55,7 +55,7 @@ class ClassManagement extends Component {
                   </select>
                 </div>
                 <div className = "col-4">
-                  <button onClick = {this.updateStudent} value={student._id}>Update</button>
+                  <button class="fraction-button btn btn-info" onClick = {this.updateStudent} value={student._id}>Update</button>
                 </div>
               </article>)
             })}
