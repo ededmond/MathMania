@@ -1,5 +1,17 @@
 article {
-    background-color:white;
-    border-radius: 5px;
+    background-color: rgba(275, 275, 275, .65);  
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     padding:15px;
+    padding-left: 10%;
+    color: #12134f;
+}
+
+
+.row{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
 }
