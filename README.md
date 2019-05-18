@@ -38,6 +38,14 @@ Node - https://nodejs.org/en/download/
 
 ## Technology Used
 
+- React
+- Mongoose DB
+- jquery
+- axios
+- react-acrylic
+- react-confetti
+- @devexpress/dx-react-grid
+
 ### Contributors
 
 #### Contributing
