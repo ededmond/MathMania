@@ -9,8 +9,6 @@ module.exports = {
         res.json(response.data)
       })
       .catch(err => res.status(422).json(err));
-  },
-
-
+  }
 }
 

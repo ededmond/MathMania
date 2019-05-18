@@ -25,7 +25,7 @@ const Nav = (props) => {
     <nav className="navbar navbar-expand-lg navbar-dark" id= "nav">
         <a class="navbar-brand" href="/">
           <div id="logo">
-            <img height="40%" width="40%" src="images/transparent-logo.png"/>
+            <img height="40%" width="40%" src="images/transparent-logo.png" alt="math-mania-logo" />
           </div>
         </a>
 
