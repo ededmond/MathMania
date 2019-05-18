@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './questionStyle.css';
-import { userInfo } from 'os';
-//import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
    
 const noDisplay = {
@@ -11,8 +9,6 @@ const noDisplay = {
 const display = {
     display: 'block'
 }
-
-//const { width, height } = useWindowSize()
 
 class QuestionGenerator extends Component{
     state= {
@@ -25,7 +21,9 @@ class QuestionGenerator extends Component{
         result: '', 
         total: 0,
         inRow: 0,
-        bonus: 0
+        bonus: 0,
+        warn: '',
+        isSubmitted: false
     }
     
     handleQuestionPost = () => {
@@ -44,32 +42,53 @@ class QuestionGenerator extends Component{
             }).then(result => console.log('successfully posted'))
             .catch(err => console.log(err));   
         }
+        if(this.state.isSubmitted===true){
+            axios.post('/api/questions')
+            .then(result =>{
+                console.log(result.data)
+                let instructions= result.data.instruction;
+                let question = result.data.question;
+                let choices = result.data.choices;
+                let answer= result.data.correct_choice;
+                let difficulty= result.data.difficulty;
+                this.setState({
+                    instructions,
+                    question,
+                    choices,
+                    answer,
+                    difficulty, 
+                    result: '',
+                    bonus: 0
+                })
+            })
+            .catch(err => console.log(err));
+            this.setState({isSubmitted: false})
+        }
         
-     axios.post('/api/questions')
-     .then(result =>{
-        console.log(result.data)
-        let instructions= result.data.instruction;
-        let question = result.data.question;
-        let choices = result.data.choices;
-        let answer= result.data.correct_choice;
-        let difficulty= result.data.difficulty;
-        this.setState({
-            instructions,
-            question,
-            choices,
-            answer,
-            difficulty, 
-            result: '',
-            bonus: 0
-        })
-     })
-     .catch(err => console.log(err));
-     document.getElementById('bonus').style.display= 'none'
+        document.getElementById('bonus').style.display= 'none'
     }
     handleStart = (e) => {
-       this.handleQuestionPost();
         document.getElementById('question').setAttribute('style', display);
         e.target.style.display = 'none'
+        axios.post('/api/questions')
+        .then(result =>{
+            console.log(result.data)
+            let instructions= result.data.instruction;
+            let question = result.data.question;
+            let choices = result.data.choices;
+            let answer= result.data.correct_choice;
+            let difficulty= result.data.difficulty;
+            this.setState({
+                instructions,
+                question,
+                choices,
+                answer,
+                difficulty, 
+                result: '',
+                bonus: 0
+            })
+        }).catch(err => console.log(err));
+        document.getElementById('bonus').style.display= 'none'
     }
     handleConvert= (arr) => {
         let temp= arr.split('</mn><mn>').join('</sup>&frasl;<sub>');
@@ -82,7 +101,7 @@ class QuestionGenerator extends Component{
     handleSubmit = () => {
         if(this.state.result=== ''){
             if(this.state.answer === this.state.selected){
-                this.setState({result:'CORRECT!'})
+                this.setState({result:'CORRECT!', warn: '', isSubmitted: true})
                 const random= Math.floor(Math.random()*10)+1
                 document.getElementById('confetti').style.display= 'block'
                 setTimeout(this.handleConffetiStop, 3000);
@@ -94,8 +113,10 @@ class QuestionGenerator extends Component{
                 }
                 document.getElementById(this.state.answer).classList.add('correct')
                 
+            }else if(this.state.selected=== ''){
+                this.setState({ warn: 'You must select one of the choices'})
             }else{
-                this.setState({result:'Try again...', inRow: 0});
+                this.setState({result:'Try again...', inRow: 0, isSubmitted: true});
                 document.getElementById(this.state.answer).classList.add('correct')
                 document.getElementById(this.state.selected).classList.add('wrong');
             }
@@ -120,7 +141,7 @@ class QuestionGenerator extends Component{
                     </div>
                     <div ><h5 id="score">Score: {this.state.total}</h5></div>
                     <div id= 'bonus'><div id= 'bonus-p'>{this.state.bonus} BONUS POINTS</div></div>
-                    
+                    <h3>{this.state.warn}</h3>
                     <h3>{this.state.result}</h3>
                 </div>
             </div>
