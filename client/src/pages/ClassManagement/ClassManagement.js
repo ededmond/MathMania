@@ -63,7 +63,7 @@ class ClassManagement extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/"><button className = "fraction-button btn btn-info">← Return to game</button></Link>
           </Col>
         </Row>
       </Container>

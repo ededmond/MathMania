@@ -1,3 +1,32 @@
 #title {
     align-content: center;
 }
+
+#progress{
+    padding-top: 20%;
+    align-content: center;
+}
+
+#title{
+    color: white;
+    font-weight: bolder;
+}
+
+/* #table{
+    width: 500px;
+    padding: 5%;
+}
+
+.grid{
+    padding: 5%;
+
+}
+
+thead{
+    padding: 5%;
+    text-align: center;
+}
+
+.dx-rg-bs4-table-header-title{
+    text-align: center
+} */
