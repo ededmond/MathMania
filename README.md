@@ -21,12 +21,22 @@ Node - https://nodejs.org/en/download/
 ```Run``` ```npm start``` to start the badge server and the frontend dev server.
 ```Open``` ```http://localhost:3000/``` to view the frontend.
 
+- build status
+- issues (waffle.io maybe)
+- devDependencies
+- npm package
+- coverage
+- slack
+- downloads
+- gitter chat
+- license
+- etc.
+
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+
 ## Technology Used
 
-
 ### Contributors
-
-
 
 #### Contributing
 
@@ -36,20 +46,6 @@ This application is hosted on heroku ```https://dashboard.heroku.com/apps/math-m
 
 ## How to Play
 
-Teachers provide a teacher code to their students.  Once the student signs in and plays the game the teacher is able to track there progress.  The Teachers will be able to set a student’s fraction level (beginning, intermediate and advanced)
+Teachers provide a teacher code to their students.  Once the student registers the game can begin !! ![Recordit GIF] (http://recordit.co/3lEn9DmXaK.gif).  The Teachers will be able to set a student’s fraction level (beginning, intermediate and advanced) and track the students' progress.  
 
-![Recordit GIF] (http://recordit.co/3lEn9DmXaK.gif)
-
-
-
-Students have the option to “Explore Fractions” and just play with the interactive block, or they can be given word problems
-
-Divide the questions into different categories (word problems and regular questions)
-
-Questions they are getting, is dependent on what level they are on
-
-User can break the block and begin to play with the fractions- they can do whatever they want
-
-If a students gets too far down the rabbit hole- they will be able to click a restart button which will reset the application 
-
-If a student gets stuck and needs help, they will have the option to ask for help, which will trigger a modal for help (***this might be an add on)
+Students have the option to “Explore Fractions” by playing with the interactive block to help solve the question.  
