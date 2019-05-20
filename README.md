@@ -26,6 +26,10 @@ Node - https://nodejs.org/en/download/
 
 4. ```Open``` ```http://localhost:3000/``` to view the frontend.
 
+## Badges
+
+[[!Github Issues](https://img.shields.io/github/issues/ededmond/MathMania.svg?style=plastic)](https://github/issues/ededmond/MathMania) [![Github Activity](https://img.shields.io/github/commit-activity/m/ededmond/MathMania.svg?style=plastic)](https://github/commit-activity/ededmond/MathMania) [!Github Contributors](https://img.shields.io/github/contributors/ededmond/MathMania.svg)](https://github/contributors/ededmond/MathMania)[![Package json Version](https://img.shields.io/github/package-json/v/ededmond/MathMania.svg?style=plastic)](https://github/languages/ededmond/MathMania)[![Dev Dependencies](https://img.shields.io/david/dev/ededmond/MathMania.svg?style=plastic)](https://github/languages/ededmond/MathMania)[![Language](https://img.shields.io/github/languages/top/ededmond/MathMania.svg?style=plastic)](https://github/languages/top/ededmond/MathMania)
+
 ## Technology Used
 
 - React
