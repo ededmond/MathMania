@@ -28,10 +28,6 @@ Node - https://nodejs.org/en/download/
 
 4. ```Open``` ```http://localhost:3000/``` to view the frontend.
 
-## Badges
-
-
-
 ## Technology Used
 
 - React
