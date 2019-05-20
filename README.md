@@ -26,7 +26,18 @@ Node - https://nodejs.org/en/download/
 
 4. ```Open``` ```http://localhost:3000/``` to view the frontend.
 
-[![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/ededmond/MathMania/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/ededmond/MathMania/pulls)
+- build status
+- issues (waffle.io maybe)
+- devDependencies
+- npm package
+- coverage
+- slack
+- downloads
+- gitter chat
+- license
+- etc.
+
+[![Coverage Status](http://img.shields.io/coveralls/ededmond/MathMania.svg?style=flat-square)](https://coveralls.io/r/ededmond/MathMania) [![Code Climate](http://img.shields.io/codeclimate/github/ededmond/MathMania.png)](https://codeclimate.com/github/edemond/MathMania) [![Github Issues](http://githubbadges.herokuapp.com/edemond/MathMania/issues.svg?style=flat-square)](https://github.com/edemond/MathMania/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/ededmond/MathMania/pulls.svg?style=flat-square)](https://github.com/ededmond/MathMania/pulls)
 
 ## Technology Used
 
