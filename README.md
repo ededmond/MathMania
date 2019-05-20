@@ -1,4 +1,5 @@
 # MathMania
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ![image](https://user-images.githubusercontent.com/45190468/57975733-16272000-799d-11e9-9c9d-beacfa8b5865.png)
 
@@ -75,3 +76,19 @@ Students have the option to “Explore Fractions” by playing with the interact
 - 🔃 Create a new pull request using <a href="https://github.com/ededmond/MathMania/compare/" target="_blank">`https://github.com/ededmond/MathMania/compare/`</a>.
 
 ## Contributors
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/laurenkerns"><img src="https://avatars3.githubusercontent.com/u/43001893?v=4" width="100px;" alt="Lauren Kerns"/><br /><sub><b>Lauren Kerns</b></sub></a><br /><a href="#infra-laurenkerns" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ededmond/MathMania/commits?author=laurenkerns" title="Tests">⚠️</a> <a href="https://github.com/ededmond/MathMania/commits?author=laurenkerns" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/tucksa"><img src="https://avatars0.githubusercontent.com/u/44711931?v=4" width="100px;" alt="tucksa"/><br /><sub><b>tucksa</b></sub></a><br /><a href="#infra-tucksa" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ededmond/MathMania/commits?author=tucksa" title="Tests">⚠️</a> <a href="https://github.com/ededmond/MathMania/commits?author=tucksa" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/Smoore090"><img src="https://avatars0.githubusercontent.com/u/44985476?v=4" width="100px;" alt="Spencer Moore"/><br /><sub><b>Spencer Moore</b></sub></a><br /><a href="#infra-Smoore090" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ededmond/MathMania/commits?author=Smoore090" title="Tests">⚠️</a> <a href="https://github.com/ededmond/MathMania/commits?author=Smoore090" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/jgwynn36"><img src="https://avatars3.githubusercontent.com/u/45190468?v=4" width="100px;" alt="jgwynn"/><br /><sub><b>jgwynn</b></sub></a><br /><a href="#infra-jgwynn36" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ededmond/MathMania/commits?author=jgwynn36" title="Tests">⚠️</a> <a href="https://github.com/ededmond/MathMania/commits?author=jgwynn36" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://ededmond.github.io/Bootsrap-Portfolio/"><img src="https://avatars1.githubusercontent.com/u/43710947?v=4" width="100px;" alt="Emma Dedmond"/><br /><sub><b>Emma Dedmond</b></sub></a><br /><a href="#infra-ededmond" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ededmond/MathMania/commits?author=ededmond" title="Tests">⚠️</a> <a href="https://github.com/ededmond/MathMania/commits?author=ededmond" title="Code">💻</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

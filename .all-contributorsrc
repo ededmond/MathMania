@@ -1,0 +1,57 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+
+      "login": "laurenkerns",
+      "name": "Lauren Kerns",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/43001893?v=4",
+      "profile": "https://github.com/laurenkerns",
+      "login": "tucksa",
+      "name": "tucksa",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/44711931?v=4",
+      "profile": "https://github.com/tucksa",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ],
+      "login": "Smoore090",
+      "name": "Spencer Moore",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/44985476?v=4",
+      "profile": "https://github.com/Smoore090",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ],
+      "login": "jgwynn36",
+      "name": "jgwynn",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/45190468?v=4",
+      "profile": "https://github.com/jgwynn36",
+       "contributions": [
+        "infra",
+        "test",
+        "code"
+      ],
+      "login": "ededmond",
+      "name": "Emma Dedmond",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/43710947?v=4",
+      "profile": "https://ededmond.github.io/Bootsrap-Portfolio/",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "MathMania",
+  "projectOwner": "ededmond",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
