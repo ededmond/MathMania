@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ededmond",
+      "name": "Emma Dedmond",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/43710947?v=4",
+      "profile": "https://ededmond.github.io/Bootsrap-Portfolio/",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "MathMania",
+  "projectOwner": "ededmond",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
