@@ -1,4 +1,5 @@
 # MathMania
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ![image](https://user-images.githubusercontent.com/45190468/57975733-16272000-799d-11e9-9c9d-beacfa8b5865.png)
 
@@ -63,3 +64,14 @@ The Teachers will be able to set a student’s fraction level (beginning, interm
 ![image](https://user-images.githubusercontent.com/45190468/57975740-37880c00-799d-11e9-9a60-e31b0bc661e3.png)
 
 Students have the option to “Explore Fractions” by playing with the interactive block to help solve the question.  
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/tucksa"><img src="https://avatars0.githubusercontent.com/u/44711931?v=4" width="100px;" alt="tucksa"/><br /><sub><b>tucksa</b></sub></a><br /><a href="#infra-tucksa" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ededmond/MathMania/commits?author=tucksa" title="Tests">⚠️</a> <a href="https://github.com/ededmond/MathMania/commits?author=tucksa" title="Code">💻</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
