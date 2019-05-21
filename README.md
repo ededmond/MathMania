@@ -9,6 +9,10 @@ MathMania is a interactive application for both teachers and students. Students 
 
 Fractions are hard as sh*t. We can all attest to how difficult fractions are, and in early development they are are a building block to not only advanced math courses, but basic knowledge for everyday life that everyone needs to understand. We want to build an application that makes fractions interactive, visual and easier to understand for students at multiple levels.
 
+## Badges
+
+[![Github Issues](https://img.shields.io/github/issues/ededmond/MathMania.svg?style=plastic)](https://github/issues/ededmond/MathMania) [![Github Activity](https://img.shields.io/github/commit-activity/m/ededmond/MathMania.svg?style=plastic)](https://github/commit-activity/ededmond/MathMania) [![Github Contributors](https://img.shields.io/github/contributors/ededmond/MathMania.svg)](https://github/contributors/ededmond/MathMania) [![Package json Version](https://img.shields.io/github/package-json/v/ededmond/MathMania.svg?style=plastic)](https://github/languages/ededmond/MathMania) [![Dev Dependencies](https://img.shields.io/david/dev/ededmond/MathMania.svg?style=plastic)](https://github/languages/ededmond/MathMania) [![Language](https://img.shields.io/github/languages/top/ededmond/MathMania.svg?style=plastic)](https://github/languages/top/ededmond/MathMania)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -19,23 +23,13 @@ Node - https://nodejs.org/en/download/
 
 ### Installation
 
-```Clone this repository``` https://github.com/ededmond/MathMania.git. 
-```Run``` ```npm i``` to install the dependencies.
-```Run``` ```npm start``` to start the badge server and the frontend dev server.
-```Open``` ```http://localhost:3000/``` to view the frontend.
+1. ```Clone repository``` ```https://github.com/ededmond/MathMania.git```
 
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
-- license
-- etc.
+2. ```Run``` ```npm i``` to install the dependencies.
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+3. ```Run``` ```npm start``` to start the badge server and the frontend dev server.
+
+4. ```Open``` ```http://localhost:3000/``` to view the frontend.
 
 ## Technology Used
 
@@ -46,10 +40,6 @@ Node - https://nodejs.org/en/download/
 - react-acrylic
 - react-confetti
 - @devexpress/dx-react-grid
-
-### Contributors
-
-#### Contributing
 
 ## Hosting
 
@@ -64,6 +54,29 @@ The Teachers will be able to set a student’s fraction level (beginning, interm
 ![image](https://user-images.githubusercontent.com/45190468/57975740-37880c00-799d-11e9-9a60-e31b0bc661e3.png)
 
 Students have the option to “Explore Fractions” by playing with the interactive block to help solve the question.  
+
+## Contributing
+
+> To get started...
+
+### Step 1
+
+- **Option 1**
+    - 🍴 Fork this repo!
+
+- **Option 2**
+    - 👯 Clone this repo to your local machine using `https://github.com/ededmond/MathMania.git`
+
+### Step 2
+
+- **HACK AWAY!** 🔨🔨🔨
+
+### Step 3
+
+- 🔃 Create a new pull request using <a href="https://github.com/ededmond/MathMania/compare/" target="_blank">`https://github.com/ededmond/MathMania/compare/`</a>.
+
+## Contributors
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
