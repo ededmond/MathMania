@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/AlperComponents/Grid";
 import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import AUTH from "../../utils/AUTH";
@@ -46,15 +46,15 @@ class ClassManagement extends Component {
           <Col size="md-8 col-centered">
             {this.state.students.map((student,i) => {
               return(<article className ="row" key={student._id}>
-                <div className = "col-4"><h1>{student.firstName} {student.lastName}</h1></div>
-                <div className = "col-4">
+                <div className = "col-6"><h1>{student.firstName} {student.lastName}</h1></div>
+                <div className = "col-3">
                   <select className="btn btn-info dropdown-toggle" id = {student._id} defaultValue = {student.difficulty}>
                     <option value = "beginner">Beginner</option>
                     <option value = "intermediate">Intermediate</option>
                     <option value = "advanced">Advanced</option>
                   </select>
                 </div>
-                <div className = "col-4">
+                <div className = "col-3">
                   <button class="fraction-button btn btn-success" onClick = {this.updateStudent} value={student._id}>Update</button>
                 </div>
               </article>)

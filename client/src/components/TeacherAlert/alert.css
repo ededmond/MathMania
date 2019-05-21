@@ -1,0 +1,19 @@
+.alert {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background-color: greenyellow;
+    color: green;
+    padding: 5px;
+}
+
+
+.shown-alert {
+    visibility: visible;
+}
+
+.hidden-alert {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}

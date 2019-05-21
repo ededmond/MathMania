@@ -1,6 +1,7 @@
+module.exports = io => { 
 const path = require("path");
 const router = require("express").Router();
-const authRoutes = require("./auth");
+const authRoutes = require("./auth")(io);
 const apiRoutes = require("./api");
 
 // Auth Routes
@@ -14,4 +15,4 @@ router.use("/api", apiRoutes);
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 // });
 
-module.exports = router;
+return router};
