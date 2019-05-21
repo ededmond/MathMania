@@ -1,14 +1,11 @@
-
 #title{
     color: #12134f;
     font-weight: bolder;
     align-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
-table{
-    margin: auto;
-    border-radius: 25px;
-}
 
 .row{
     padding-left: 5%;
@@ -17,23 +14,36 @@ table{
     padding-bottom: 1%;
 }
 
-th{
-    text-align: center;
+.table{
+    background-color: rgba(275, 275, 275, .65);  
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding:15px;
+    width: 90%;
     color: #12134f;
-    font-size: 22px;
-}
-
-tr{
+    margin: auto;
     text-align: center;
 }
 
-thead{
+.progress-row{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
 }
 
-td{
+.dx-rg-bs4-table-header-title{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: auto;
+}
+
+.dx-g-bs4-table-cell{
+    font-size: 1.3rem;
+    margin: auto;
+    color: #12134f;
     font-weight: bold;
-    font-size: 18px;
 }
 
 
