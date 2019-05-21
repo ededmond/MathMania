@@ -30,9 +30,11 @@ class QuestionGenerator extends Component{
         let ans =  document.getElementById(this.state.answer)
         let sel= document.getElementById(this.state.selected)
         if(ans && sel){
-            if(ans.classList[1]==='correct' || sel.classList[1]==='wrong'){  
-                ans.classList.remove('correct');
-                sel.classList.remove('wrong');
+            for(let i=0; i<5; i++){
+                if(document.getElementById(i).classList[1]==='correct' || document.getElementById(i).classList[1]==='wrong'){  
+                   document.getElementById(i).classList.remove('correct');
+                   document.getElementById(i).classList.remove('wrong');
+                }
             }
             document.getElementById('Radio'+this.state.selected).checked=false
                   
@@ -59,7 +61,8 @@ class QuestionGenerator extends Component{
                     difficulty, 
                     result: '',
                     bonus: 0,
-                    warn: ''
+                    warn: '',
+                    selected: ''
                 })
             })
             .catch(err => console.log(err));
@@ -123,7 +126,7 @@ class QuestionGenerator extends Component{
                 document.getElementById(this.state.answer).classList.add('correct')
                 document.getElementById(this.state.selected).classList.add('wrong');
             }
-        } else console.log('CHEATER!')
+        } else this.setState({ warn: 'CHEATER!', result: ''})
        
     }
     render(){
