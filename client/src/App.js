@@ -8,7 +8,7 @@ import ClassManagement from "./pages/ClassManagement";
 import NoMatch from "./pages/NoMatch";
 import AUTH from './utils/AUTH';
 import ClassProgress from './pages/ClassProgress'; 
-
+import TeacherAlert from "./components/TeacherAlert";
 
 class App extends Component {
   
@@ -94,6 +94,7 @@ class App extends Component {
                 <Route component={NoMatch} />
               </Switch>
             </div>
+            {!this.state.user.teacherCode && <TeacherAlert user = {this.state.user}/>}
           </div>
         )}
         {!this.state.loggedIn && (
