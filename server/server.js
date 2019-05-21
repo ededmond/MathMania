@@ -10,9 +10,15 @@ const morgan = require('morgan');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const dbConnection = require('./db'); // loads our connection to the mongo database
-const routes = require("./routes");
 const passport = require('./passport');
+
 const app = express();
+//	Socket.io implementation
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+const routes = require("./routes") (io);
+
 const PORT = process.env.PORT || 3001;
 
 // Middlewares
@@ -32,7 +38,6 @@ app.use(passport.session()); // will call the deserializeUser
 
 // Add routes, both API and view
 app.use(routes);
-
 
 // If its production environment!
 if (process.env.NODE_ENV === 'production') {
@@ -54,7 +59,14 @@ app.use(function(err, req, res, next) {
 	res.status(500);
 });
 
+io.on('connection',function(socket) {
+	console.log('a user connected');
+	socket.on('disconnect',function() {
+	  console.log('user disconnected');
+	})
+})
+
 // Starting Server
-app.listen(PORT, () => {
+http.listen(PORT, () => {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

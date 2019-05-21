@@ -9,7 +9,7 @@ import "@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css";
 import { Col, Row} from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 import Acrylic from 'react-acrylic'; 
-import Jumbotron from "../../components/AlperComponents/Jumbotron";
+// import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import './progress.css'
 
 class ClassProgress extends React.PureComponent {

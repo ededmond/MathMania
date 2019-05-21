@@ -1,7 +1,8 @@
 const db = require("../models");
 
 // Defining methods for the userController
-module.exports = {
+module.exports =io => { 
+  return {
   getUser: (req, res, next) => {
     console.log('===== user!!======');
     console.log(req.user);
@@ -34,6 +35,7 @@ module.exports = {
       grades
     }).then(response => {
       res.json(response);
+      io.emit(req.user.teacherCode,`${req.user.firstName} ${req.user.lastName} answered ${correct ? "correctly" : "incorrectly"}`);
     }).catch(error => {
       console.log(error);
       res.json(error);
@@ -107,4 +109,4 @@ module.exports = {
 		}
 		res.json({ user: cleanUser });
 	}
-};
+}};

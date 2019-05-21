@@ -6,10 +6,6 @@
     border: 1px black solid;
 }
 
-.selected {
-    
-}
-
 .col-12 .col-4 .col-6 [class*="col-"]{
     margin: 0px;
     padding-right: 0px !important;
@@ -17,6 +13,11 @@
     margin-right: 0px;
     width: 100%;
 }
+
+.row {
+    padding: 0px !important;
+}
+
 .row-align {
     margin-right: 0px;
     margin-left:0px;
