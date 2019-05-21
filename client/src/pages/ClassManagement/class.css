@@ -15,3 +15,12 @@ article {
     align-items: center;
     vertical-align: middle;
 }
+
+article.row{
+    margin-top: 2%;
+}
+
+#student-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+}

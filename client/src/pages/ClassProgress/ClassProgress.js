@@ -6,10 +6,10 @@ import {
   TableHeaderRow
 } from "@devexpress/dx-react-grid-bootstrap4"; 
 import "@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css";
-import { Col, Row} from "../../components/AlperComponents/Grid";
+import { Col, Row, Container} from "../../components/AlperComponents/Grid";
 import AUTH from "../../utils/AUTH";
 import Acrylic from 'react-acrylic'; 
-// import Jumbotron from "../../components/AlperComponents/Jumbotron";
+import Jumbotron from "../../components/AlperComponents/Jumbotron";
 import './progress.css'
 
 class ClassProgress extends React.PureComponent {
@@ -85,40 +85,59 @@ class ClassProgress extends React.PureComponent {
     const { rows, columns } = this.state;
 
     return (
-   
-        <Acrylic
-          backgroundColor="rgba(275, 275, 275, .65); "
-          backdropFilter="blur(10px)"
 
 
-          // position='absolute'
-          top='25%'
-          left='10%'
-          width='1200px'
-          height='600px'
-          align="center"
-
-          blur={40}
-          borderRadius='2px'
-        >
-  
-        <Row id="title-div">
-            <Col size="md-12">
-              <h1 id="title">Student Data</h1>
-            </Col>
+      <Container fluid>
+        <Row>
+          <Col size="md-12">
+            <Jumbotron>
+            <h2 id="title">Student Data</h2>
+            </Jumbotron>
+          </Col>
         </Row>
+        <Row class= "progress-row">
+        <Grid className="grid" rows={rows} columns={columns}>
+        <Table />
+        <TableHeaderRow class="headers" />
+        </Grid>
+        </Row>
+      </Container>
+
+
+   
+        // <Acrylic
+        //   backgroundColor="rgba(275, 275, 275, .65); "
+        //   backdropFilter="blur(10px)"
+
+
+        //   // position='absolute'
+        //   top='25%'
+        //   left='10%'
+        //   width='1200px'
+        //   height='600px'
+        //   align="center"
+
+        //   blur={40}
+        //   borderRadius='2px'
+        // >
+  
+        // <Row id="title-div">
+        //     <Col size="md-12">
+        //       <h1 id="title">Student Data</h1>
+        //     </Col>
+        // </Row>
       
 
-        {/* <Row>
+        /* <Row>
           <Col size="md-6" />
-        </Row> */}
-        <Row>
-          <Grid className="grid" rows={rows} columns={columns}>
-            <Table />
-            <TableHeaderRow />
-          </Grid>
-        </Row>
-        </Acrylic>
+        </Row> */
+        // <Row>
+        //   <Grid className="grid" rows={rows} columns={columns}>
+        //     <Table />
+        //     <TableHeaderRow />
+        //   </Grid>
+        // </Row>
+        // </Acrylic>
     
     );
   }
