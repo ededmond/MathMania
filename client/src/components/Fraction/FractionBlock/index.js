@@ -44,7 +44,7 @@ const FractionBlock = props => {
                     {fractionArray.map((item,index,fractionArray) => {
                         return (<div>
                             <FractionBlock 
-                                key = {Math.random()}
+                                key = {index}
                                 height= {height}
                                 width = {(width / state.pieces)}
                                 fraction = {fraction * state.pieces}
@@ -61,7 +61,7 @@ const FractionBlock = props => {
                         {fractionArray.map((item,index,fractionArray) => {
                             return (<div className="row" key ={index}>
                                 <FractionBlock 
-                                key = {Math.random()}
+                                key = {index}
                                 height= {height / state.pieces}
                                 width = {width}
                                 fraction = {fraction * state.pieces}
